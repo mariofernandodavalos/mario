@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */; };
+		84A99F711DA6EA8D0059C852 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F701DA6EA8D0059C852 /* ViewController.swift */; };
+		84A99F741DA6EA8D0059C852 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F721DA6EA8D0059C852 /* Main.storyboard */; };
+		84A99F771DA6EA8D0059C852 /* VieTaxi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */; };
+		84A99F791DA6EA8D0059C852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F781DA6EA8D0059C852 /* Assets.xcassets */; };
+		84A99F7C1DA6EA8D0059C852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F7A1DA6EA8D0059C852 /* LaunchScreen.storyboard */; };
+		84A99F871DA6EA8D0059C852 /* VieTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F861DA6EA8D0059C852 /* VieTaxiTests.swift */; };
+		84A99F921DA6EA8D0059C852 /* VieTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84A99F831DA6EA8D0059C852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A99F631DA6EA8C0059C852 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A99F6A1DA6EA8D0059C852;
+			remoteInfo = VieTaxi;
+		};
+		84A99F8E1DA6EA8D0059C852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A99F631DA6EA8C0059C852 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A99F6A1DA6EA8D0059C852;
+			remoteInfo = VieTaxi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84A99F6B1DA6EA8D0059C852 /* VieTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VieTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84A99F701DA6EA8D0059C852 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84A99F731DA6EA8D0059C852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84A99F761DA6EA8D0059C852 /* VieTaxi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VieTaxi.xcdatamodel; sourceTree = "<group>"; };
+		84A99F781DA6EA8D0059C852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84A99F7B1DA6EA8D0059C852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84A99F7D1DA6EA8D0059C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A99F821DA6EA8D0059C852 /* VieTaxiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieTaxiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A99F861DA6EA8D0059C852 /* VieTaxiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieTaxiTests.swift; sourceTree = "<group>"; };
+		84A99F881DA6EA8D0059C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A99F8D1DA6EA8D0059C852 /* VieTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieTaxiUITests.swift; sourceTree = "<group>"; };
+		84A99F931DA6EA8D0059C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84A99F681DA6EA8D0059C852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A99F7F1DA6EA8D0059C852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A99F8A1DA6EA8D0059C852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84A99F621DA6EA8C0059C852 = {
+			isa = PBXGroup;
+			children = (
+				84A99F6D1DA6EA8D0059C852 /* VieTaxi */,
+				84A99F851DA6EA8D0059C852 /* VieTaxiTests */,
+				84A99F901DA6EA8D0059C852 /* VieTaxiUITests */,
+				84A99F6C1DA6EA8D0059C852 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84A99F6C1DA6EA8D0059C852 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84A99F6B1DA6EA8D0059C852 /* VieTaxi.app */,
+				84A99F821DA6EA8D0059C852 /* VieTaxiTests.xctest */,
+				84A99F8D1DA6EA8D0059C852 /* VieTaxiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84A99F6D1DA6EA8D0059C852 /* VieTaxi */ = {
+			isa = PBXGroup;
+			children = (
+				84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */,
+				84A99F701DA6EA8D0059C852 /* ViewController.swift */,
+				84A99F721DA6EA8D0059C852 /* Main.storyboard */,
+				84A99F781DA6EA8D0059C852 /* Assets.xcassets */,
+				84A99F7A1DA6EA8D0059C852 /* LaunchScreen.storyboard */,
+				84A99F7D1DA6EA8D0059C852 /* Info.plist */,
+				84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */,
+			);
+			path = VieTaxi;
+			sourceTree = "<group>";
+		};
+		84A99F851DA6EA8D0059C852 /* VieTaxiTests */ = {
+			isa = PBXGroup;
+			children = (
+				84A99F861DA6EA8D0059C852 /* VieTaxiTests.swift */,
+				84A99F881DA6EA8D0059C852 /* Info.plist */,
+			);
+			path = VieTaxiTests;
+			sourceTree = "<group>";
+		};
+		84A99F901DA6EA8D0059C852 /* VieTaxiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */,
+				84A99F931DA6EA8D0059C852 /* Info.plist */,
+			);
+			path = VieTaxiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84A99F6A1DA6EA8D0059C852 /* VieTaxi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A99F961DA6EA8D0059C852 /* Build configuration list for PBXNativeTarget "VieTaxi" */;
+			buildPhases = (
+				84A99F671DA6EA8D0059C852 /* Sources */,
+				84A99F681DA6EA8D0059C852 /* Frameworks */,
+				84A99F691DA6EA8D0059C852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VieTaxi;
+			productName = VieTaxi;
+			productReference = 84A99F6B1DA6EA8D0059C852 /* VieTaxi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84A99F811DA6EA8D0059C852 /* VieTaxiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A99F991DA6EA8D0059C852 /* Build configuration list for PBXNativeTarget "VieTaxiTests" */;
+			buildPhases = (
+				84A99F7E1DA6EA8D0059C852 /* Sources */,
+				84A99F7F1DA6EA8D0059C852 /* Frameworks */,
+				84A99F801DA6EA8D0059C852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A99F841DA6EA8D0059C852 /* PBXTargetDependency */,
+			);
+			name = VieTaxiTests;
+			productName = VieTaxiTests;
+			productReference = 84A99F821DA6EA8D0059C852 /* VieTaxiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84A99F8C1DA6EA8D0059C852 /* VieTaxiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A99F9C1DA6EA8D0059C852 /* Build configuration list for PBXNativeTarget "VieTaxiUITests" */;
+			buildPhases = (
+				84A99F891DA6EA8D0059C852 /* Sources */,
+				84A99F8A1DA6EA8D0059C852 /* Frameworks */,
+				84A99F8B1DA6EA8D0059C852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A99F8F1DA6EA8D0059C852 /* PBXTargetDependency */,
+			);
+			name = VieTaxiUITests;
+			productName = VieTaxiUITests;
+			productReference = 84A99F8D1DA6EA8D0059C852 /* VieTaxiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84A99F631DA6EA8C0059C852 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = vietaxi;
+				TargetAttributes = {
+					84A99F6A1DA6EA8D0059C852 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7962FWHR52;
+						ProvisioningStyle = Automatic;
+					};
+					84A99F811DA6EA8D0059C852 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7962FWHR52;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84A99F6A1DA6EA8D0059C852;
+					};
+					84A99F8C1DA6EA8D0059C852 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7962FWHR52;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84A99F6A1DA6EA8D0059C852;
+					};
+				};
+			};
+			buildConfigurationList = 84A99F661DA6EA8C0059C852 /* Build configuration list for PBXProject "VieTaxi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84A99F621DA6EA8C0059C852;
+			productRefGroup = 84A99F6C1DA6EA8D0059C852 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84A99F6A1DA6EA8D0059C852 /* VieTaxi */,
+				84A99F811DA6EA8D0059C852 /* VieTaxiTests */,
+				84A99F8C1DA6EA8D0059C852 /* VieTaxiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84A99F691DA6EA8D0059C852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A99F7C1DA6EA8D0059C852 /* LaunchScreen.storyboard in Resources */,
+				84A99F791DA6EA8D0059C852 /* Assets.xcassets in Resources */,
+				84A99F741DA6EA8D0059C852 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A99F801DA6EA8D0059C852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A99F8B1DA6EA8D0059C852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84A99F671DA6EA8D0059C852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A99F771DA6EA8D0059C852 /* VieTaxi.xcdatamodeld in Sources */,
+				84A99F711DA6EA8D0059C852 /* ViewController.swift in Sources */,
+				84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A99F7E1DA6EA8D0059C852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A99F871DA6EA8D0059C852 /* VieTaxiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A99F891DA6EA8D0059C852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A99F921DA6EA8D0059C852 /* VieTaxiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84A99F841DA6EA8D0059C852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A99F6A1DA6EA8D0059C852 /* VieTaxi */;
+			targetProxy = 84A99F831DA6EA8D0059C852 /* PBXContainerItemProxy */;
+		};
+		84A99F8F1DA6EA8D0059C852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A99F6A1DA6EA8D0059C852 /* VieTaxi */;
+			targetProxy = 84A99F8E1DA6EA8D0059C852 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84A99F721DA6EA8D0059C852 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A99F731DA6EA8D0059C852 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84A99F7A1DA6EA8D0059C852 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84A99F7B1DA6EA8D0059C852 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84A99F941DA6EA8D0059C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A99F951DA6EA8D0059C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84A99F971DA6EA8D0059C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = VieTaxi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84A99F981DA6EA8D0059C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = VieTaxi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		84A99F9A1DA6EA8D0059C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = VieTaxiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VieTaxi.app/VieTaxi";
+			};
+			name = Debug;
+		};
+		84A99F9B1DA6EA8D0059C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = VieTaxiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VieTaxi.app/VieTaxi";
+			};
+			name = Release;
+		};
+		84A99F9D1DA6EA8D0059C852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = VieTaxiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VieTaxi;
+			};
+			name = Debug;
+		};
+		84A99F9E1DA6EA8D0059C852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = VieTaxiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VieTaxi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84A99F661DA6EA8C0059C852 /* Build configuration list for PBXProject "VieTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A99F941DA6EA8D0059C852 /* Debug */,
+				84A99F951DA6EA8D0059C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A99F961DA6EA8D0059C852 /* Build configuration list for PBXNativeTarget "VieTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A99F971DA6EA8D0059C852 /* Debug */,
+				84A99F981DA6EA8D0059C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84A99F991DA6EA8D0059C852 /* Build configuration list for PBXNativeTarget "VieTaxiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A99F9A1DA6EA8D0059C852 /* Debug */,
+				84A99F9B1DA6EA8D0059C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84A99F9C1DA6EA8D0059C852 /* Build configuration list for PBXNativeTarget "VieTaxiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A99F9D1DA6EA8D0059C852 /* Debug */,
+				84A99F9E1DA6EA8D0059C852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84A99F761DA6EA8D0059C852 /* VieTaxi.xcdatamodel */,
+			);
+			currentVersion = 84A99F761DA6EA8D0059C852 /* VieTaxi.xcdatamodel */;
+			path = VieTaxi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84A99F631DA6EA8C0059C852 /* Project object */;
+}
