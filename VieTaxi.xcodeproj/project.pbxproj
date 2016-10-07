@@ -15,6 +15,7 @@
 		84A99F7C1DA6EA8D0059C852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F7A1DA6EA8D0059C852 /* LaunchScreen.storyboard */; };
 		84A99F871DA6EA8D0059C852 /* VieTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F861DA6EA8D0059C852 /* VieTaxiTests.swift */; };
 		84A99F921DA6EA8D0059C852 /* VieTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */; };
+		84A99FA01DA72E2D0059C852 /* VieTaxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F9F1DA72E2D0059C852 /* VieTaxi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		84A99F8D1DA6EA8D0059C852 /* VieTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieTaxiUITests.swift; sourceTree = "<group>"; };
 		84A99F931DA6EA8D0059C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A99F9F1DA72E2D0059C852 /* VieTaxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VieTaxi.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		84A99F6D1DA6EA8D0059C852 /* VieTaxi */ = {
 			isa = PBXGroup;
 			children = (
+				84A99FA11DA72F230059C852 /* Assets */,
 				84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */,
 				84A99F701DA6EA8D0059C852 /* ViewController.swift */,
 				84A99F721DA6EA8D0059C852 /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				84A99F931DA6EA8D0059C852 /* Info.plist */,
 			);
 			path = VieTaxiUITests;
+			sourceTree = "<group>";
+		};
+		84A99FA11DA72F230059C852 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				84A99F9F1DA72E2D0059C852 /* VieTaxi.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A99FA01DA72E2D0059C852 /* VieTaxi.png in Resources */,
 				84A99F7C1DA6EA8D0059C852 /* LaunchScreen.storyboard in Resources */,
 				84A99F791DA6EA8D0059C852 /* Assets.xcassets in Resources */,
 				84A99F741DA6EA8D0059C852 /* Main.storyboard in Resources */,
@@ -421,6 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7962FWHR52;
 				INFOPLIST_FILE = VieTaxi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,6 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7962FWHR52;
 				INFOPLIST_FILE = VieTaxi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
