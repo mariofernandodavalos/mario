@@ -16,6 +16,7 @@
 		84A99F871DA6EA8D0059C852 /* VieTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F861DA6EA8D0059C852 /* VieTaxiTests.swift */; };
 		84A99F921DA6EA8D0059C852 /* VieTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */; };
 		84A99FA01DA72E2D0059C852 /* VieTaxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F9F1DA72E2D0059C852 /* VieTaxi.png */; };
+		84A99FA31DB2CBE30059C852 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FA21DB2CBE30059C852 /* RegisterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieTaxiUITests.swift; sourceTree = "<group>"; };
 		84A99F931DA6EA8D0059C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A99F9F1DA72E2D0059C852 /* VieTaxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VieTaxi.png; sourceTree = "<group>"; };
+		84A99FA21DB2CBE30059C852 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				84A99F7A1DA6EA8D0059C852 /* LaunchScreen.storyboard */,
 				84A99F7D1DA6EA8D0059C852 /* Info.plist */,
 				84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */,
+				84A99FA21DB2CBE30059C852 /* RegisterController.swift */,
 			);
 			path = VieTaxi;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A99FA31DB2CBE30059C852 /* RegisterController.swift in Sources */,
 				84A99F771DA6EA8D0059C852 /* VieTaxi.xcdatamodeld in Sources */,
 				84A99F711DA6EA8D0059C852 /* ViewController.swift in Sources */,
 				84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */,
