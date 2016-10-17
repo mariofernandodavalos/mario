@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -174,13 +175,210 @@
                     <view key="view" contentMode="scaleToFill" id="U10-1R-5AZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXw-1B-PkB">
+                                <color key="backgroundColor" red="0.2081770761" green="0.30403933160000002" blue="0.41451734540000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="yjX-E1-ArQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="19"/>
+                                <state key="normal" title="Tus metodos de pago"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9r-8P-3OD">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="4dw-Gf-VlF"/>
+                                    <constraint firstAttribute="height" constant="40" id="CXO-DJ-sIi"/>
+                                </constraints>
+                                <state key="normal" image="AddPay"/>
+                                <connections>
+                                    <segue destination="asb-6B-R1i" kind="show" id="oxD-kj-IoQ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xE5-Nk-PAK">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xE5-Nk-PAK" secondAttribute="trailing" id="4bk-f7-W0M"/>
+                            <constraint firstAttribute="trailing" secondItem="a9r-8P-3OD" secondAttribute="trailing" id="HYn-d9-qar"/>
+                            <constraint firstAttribute="trailing" secondItem="kXw-1B-PkB" secondAttribute="trailing" id="My0-nN-61F"/>
+                            <constraint firstItem="s1R-iM-Gfm" firstAttribute="top" secondItem="xE5-Nk-PAK" secondAttribute="bottom" id="Ssj-Mf-O22"/>
+                            <constraint firstItem="kXw-1B-PkB" firstAttribute="top" secondItem="4ZY-Od-om3" secondAttribute="bottom" id="UP8-Kf-ARP"/>
+                            <constraint firstItem="xE5-Nk-PAK" firstAttribute="top" secondItem="kXw-1B-PkB" secondAttribute="bottom" id="VSK-ky-Afl"/>
+                            <constraint firstItem="a9r-8P-3OD" firstAttribute="top" secondItem="4ZY-Od-om3" secondAttribute="bottom" id="hg9-gp-IAg"/>
+                            <constraint firstItem="kXw-1B-PkB" firstAttribute="leading" secondItem="U10-1R-5AZ" secondAttribute="leading" id="ioR-Cz-fpa"/>
+                            <constraint firstItem="xE5-Nk-PAK" firstAttribute="leading" secondItem="U10-1R-5AZ" secondAttribute="leadingMargin" id="nJo-y3-0lp"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pagos" image="Pagos" selectedImage="PagoSelected" id="hY8-0q-Zqe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh3-U4-241" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1481" y="167"/>
+            <point key="canvasLocation" x="1479.375" y="166.90140845070422"/>
+        </scene>
+        <!--Pago Controller-->
+        <scene sceneID="6zq-Hp-O8l">
+            <objects>
+                <viewController id="zp7-7r-Uu8" customClass="PagoController" customModule="VieTaxi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="trH-4Z-cUO"/>
+                        <viewControllerLayoutGuide type="bottom" id="t8h-HA-XaL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y1e-0k-z5Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKM-6V-SUv">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="JB2-4B-piK">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS9-nT-t8J">
+                                                <color key="backgroundColor" red="0.2081770761" green="0.30403933160000002" blue="0.41451734540000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="qwV-Ud-lkd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="19"/>
+                                                <state key="normal" title="Datos de la tarjeta"/>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZJD-wG-U4A">
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2y-Wu-1NP"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número de la tarjeta" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OB6-2b-7jD">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="zHq-O3-Txx"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deF-Gg-vJZ"/>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-9P-KHq">
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iQ-x9-qBm"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4d2-uZ-a6n">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="3Uo-D4-OlW"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AA" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2f-Lz-3XV">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="5gV-gV-n8D"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u3G-mZ-9HO">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="uKZ-I0-DoK"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" secureTextEntry="YES"/>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0P-Tt-s76"/>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="erO-2P-48T">
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XjJ-WW-MXl"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="EKk-vN-Cbg">
+                                                        <color key="backgroundColor" red="0.72941176470000002" green="0.52156862749999999" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="8JO-vL-QyR"/>
+                                                            <constraint firstAttribute="height" constant="30" id="H9h-ar-vFT"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="vsw-OA-snQ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                                        <size key="titleShadowOffset" width="4" height="4"/>
+                                                        <state key="normal" title="Agregar pago"/>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nC-gO-Y1H"/>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZKM-6V-SUv" secondAttribute="trailing" id="WzW-Zs-8kp"/>
+                            <constraint firstItem="ZKM-6V-SUv" firstAttribute="leading" secondItem="y1e-0k-z5Q" secondAttribute="leading" id="jYZ-BN-HF3"/>
+                            <constraint firstItem="ZKM-6V-SUv" firstAttribute="top" secondItem="trH-4Z-cUO" secondAttribute="bottom" id="yJH-Oj-ZdL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Agrega" destination="EKk-vN-Cbg" id="auS-AN-tyu"/>
+                        <outlet property="Ano" destination="f2f-Lz-3XV" id="hUH-Kq-k2u"/>
+                        <outlet property="Cvv" destination="u3G-mZ-9HO" id="PIb-g2-Nwm"/>
+                        <outlet property="Mes" destination="4d2-uZ-a6n" id="JkF-Nv-Tw9"/>
+                        <outlet property="Num" destination="OB6-2b-7jD" id="M40-am-X3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUd-rq-BVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="1671"/>
+        </scene>
+        <!--Metodos de pago-->
+        <scene sceneID="KTx-bf-z1U">
+            <objects>
+                <viewController title="Metodos de pago" id="asb-6B-R1i" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eJ5-hz-G5a"/>
+                        <viewControllerLayoutGuide type="bottom" id="kiQ-qU-vzR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Qx-jc-IKj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Uz-dk-IHi">
+                                <color key="backgroundColor" red="0.2081770761" green="0.30403933160000002" blue="0.41451734540000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="aCF-zn-qYW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="19"/>
+                                <state key="normal" title="Metodo a agregar"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufd-SM-JqI">
+                                <color key="backgroundColor" red="0.93910256410256399" green="0.93910256410256399" blue="0.93910256410256399" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="     Targeta de crédito" image="CreditCard">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zp7-7r-Uu8" kind="show" id="3Au-BO-Brz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSN-i5-u09">
+                                <color key="backgroundColor" red="0.93910256410000004" green="0.93910256410000004" blue="0.93910256410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="     Paypal" image="PayPal">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QSN-i5-u09" firstAttribute="leading" secondItem="3Qx-jc-IKj" secondAttribute="leadingMargin" constant="15" id="09T-R2-e8Y"/>
+                            <constraint firstAttribute="trailing" secondItem="9Uz-dk-IHi" secondAttribute="trailing" id="2fJ-fg-0Xz"/>
+                            <constraint firstItem="QSN-i5-u09" firstAttribute="top" secondItem="Ufd-SM-JqI" secondAttribute="bottom" constant="8" id="410-rl-uDG"/>
+                            <constraint firstItem="Ufd-SM-JqI" firstAttribute="top" secondItem="9Uz-dk-IHi" secondAttribute="bottom" constant="8" id="InI-VZ-Yxm"/>
+                            <constraint firstItem="9Uz-dk-IHi" firstAttribute="leading" secondItem="3Qx-jc-IKj" secondAttribute="leading" id="PkC-fc-sYI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ufd-SM-JqI" secondAttribute="trailing" id="kIb-h9-AWK"/>
+                            <constraint firstItem="QSN-i5-u09" firstAttribute="trailing" secondItem="3Qx-jc-IKj" secondAttribute="trailingMargin" id="oH8-yO-aO8"/>
+                            <constraint firstItem="Ufd-SM-JqI" firstAttribute="leading" secondItem="3Qx-jc-IKj" secondAttribute="leadingMargin" constant="15" id="tQF-Fp-kwO"/>
+                            <constraint firstItem="9Uz-dk-IHi" firstAttribute="top" secondItem="eJ5-hz-G5a" secondAttribute="bottom" id="yVo-Rh-hZd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYe-Cp-OcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478" y="943"/>
         </scene>
         <!--Viajes-->
         <scene sceneID="XTR-An-b09">
@@ -651,7 +849,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddPay" width="24" height="24"/>
         <image name="Correo" width="24" height="24"/>
+        <image name="CreditCard" width="24" height="24"/>
         <image name="Editing" width="16" height="16"/>
         <image name="Facebook" width="128" height="128"/>
         <image name="Google" width="128" height="128"/>
@@ -659,6 +859,7 @@
         <image name="HistorialSelected" width="32" height="32"/>
         <image name="PagoSelected" width="32" height="32"/>
         <image name="Pagos" width="24" height="24"/>
+        <image name="PayPal" width="24" height="15"/>
         <image name="Perfil" width="24" height="24"/>
         <image name="PerfilSelected" width="32" height="32"/>
         <image name="Profile" width="256" height="256"/>
