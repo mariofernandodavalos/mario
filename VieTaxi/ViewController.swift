@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var Logo: UIImageView!
     
+    @IBOutlet weak var VieTaxi: UIImageView!
+    
     var LogoSave: UIImageView!
     var LogoChan: UIImageView!
     
@@ -52,12 +54,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func Focus(_ sender: UITextField) {
-        Logo.isHidden = false
+        self.Logo.isHidden = false
+        self.VieTaxi.isHidden = true
         
     }
     
     @IBAction func NoFocus(_ sender: UITextField) {
-        Logo.isHidden = true
+        self.Logo.isHidden = true
+        self.VieTaxi.isHidden = false
     }
     
 }
