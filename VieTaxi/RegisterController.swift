@@ -46,7 +46,7 @@ class RegisterController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.characters.count + string.characters.count - range.length
-        return newLength <= ViewController.MAX_TEXT_SIZE
+        return newLength <= LoginController.MAX_TEXT_SIZE
     }
     
     

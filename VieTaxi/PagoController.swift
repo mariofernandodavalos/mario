@@ -16,7 +16,7 @@ class PagoController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Ano: UITextField!
     @IBOutlet weak var Cvv: UITextField!
     @IBOutlet weak var Agrega: UIButton!
-    static let MAX_TEXT_SIZE = 30
+    static let MAX_TEXT_SIZE = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,6 @@ class PagoController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.characters.count + string.characters.count - range.length
-        return newLength <= ViewController.MAX_TEXT_SIZE
+        return newLength <= LoginController.MAX_TEXT_SIZE
 }
 }

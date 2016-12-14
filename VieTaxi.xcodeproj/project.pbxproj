@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000787F0FEEC9B4A3066AA2B /* Pods_VieTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A25793F0F837B0B111091 /* Pods_VieTaxi.framework */; };
 		84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */; };
-		84A99F711DA6EA8D0059C852 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F701DA6EA8D0059C852 /* ViewController.swift */; };
 		84A99F741DA6EA8D0059C852 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F721DA6EA8D0059C852 /* Main.storyboard */; };
 		84A99F771DA6EA8D0059C852 /* VieTaxi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */; };
 		84A99F791DA6EA8D0059C852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F781DA6EA8D0059C852 /* Assets.xcassets */; };
 		84A99F7C1DA6EA8D0059C852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F7A1DA6EA8D0059C852 /* LaunchScreen.storyboard */; };
 		84A99F871DA6EA8D0059C852 /* VieTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F861DA6EA8D0059C852 /* VieTaxiTests.swift */; };
 		84A99F921DA6EA8D0059C852 /* VieTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */; };
-		84A99FA01DA72E2D0059C852 /* VieTaxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F9F1DA72E2D0059C852 /* VieTaxi.png */; };
 		84A99FA31DB2CBE30059C852 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FA21DB2CBE30059C852 /* RegisterController.swift */; };
 		84A99FA51DB40D640059C852 /* ViajesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FA41DB40D630059C852 /* ViajesController.swift */; };
 		84A99FA91DB4C04B0059C852 /* PagoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FA81DB4C04B0059C852 /* PagoController.swift */; };
+		84A99FAB1DB542B40059C852 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99FAA1DB542B40059C852 /* ProfileController.swift */; };
+		84E63F971DF9D7CF006A5BDF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E63F961DF9D7CF006A5BDF /* LoginController.swift */; };
+		84F08B321DFB4B7500BF89B8 /* TabBarSelectedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F08B311DFB4B7500BF89B8 /* TabBarSelectedController.swift */; };
+		84F08B341DFB866C00BF89B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84F08B331DFB866C00BF89B8 /* GoogleService-Info.plist */; };
+		84FBF6671E00538A0073B4A8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBF6661E00538A0073B4A8 /* Helpers.swift */; };
+		84FBF6691E008C3B0073B4A8 /* GoogleMapsDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBF6681E008C3A0073B4A8 /* GoogleMapsDirections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01F7DEC12A4D30E11CD67E09 /* Pods-VieTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTaxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-VieTaxi/Pods-VieTaxi.release.xcconfig"; sourceTree = "<group>"; };
 		84A99F6B1DA6EA8D0059C852 /* VieTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VieTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84A99F701DA6EA8D0059C852 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84A99F731DA6EA8D0059C852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84A99F761DA6EA8D0059C852 /* VieTaxi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VieTaxi.xcdatamodel; sourceTree = "<group>"; };
 		84A99F781DA6EA8D0059C852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,10 +58,17 @@
 		84A99F8D1DA6EA8D0059C852 /* VieTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VieTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A99F911DA6EA8D0059C852 /* VieTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieTaxiUITests.swift; sourceTree = "<group>"; };
 		84A99F931DA6EA8D0059C852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84A99F9F1DA72E2D0059C852 /* VieTaxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VieTaxi.png; sourceTree = "<group>"; };
 		84A99FA21DB2CBE30059C852 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		84A99FA41DB40D630059C852 /* ViajesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViajesController.swift; sourceTree = "<group>"; };
 		84A99FA81DB4C04B0059C852 /* PagoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoController.swift; sourceTree = "<group>"; };
+		84A99FAA1DB542B40059C852 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		84E63F961DF9D7CF006A5BDF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		84F08B311DFB4B7500BF89B8 /* TabBarSelectedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSelectedController.swift; sourceTree = "<group>"; };
+		84F08B331DFB866C00BF89B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84FBF6661E00538A0073B4A8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		84FBF6681E008C3A0073B4A8 /* GoogleMapsDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsDirections.swift; sourceTree = "<group>"; };
+		A69A25793F0F837B0B111091 /* Pods_VieTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD3CBE8A06A3303DD3283283 /* Pods-VieTaxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTaxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieTaxi/Pods-VieTaxi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000787F0FEEC9B4A3066AA2B /* Pods_VieTaxi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		433BA94438B6A23CAA1361FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD3CBE8A06A3303DD3283283 /* Pods-VieTaxi.debug.xcconfig */,
+				01F7DEC12A4D30E11CD67E09 /* Pods-VieTaxi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		84A99F621DA6EA8C0059C852 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +113,8 @@
 				84A99F851DA6EA8D0059C852 /* VieTaxiTests */,
 				84A99F901DA6EA8D0059C852 /* VieTaxiUITests */,
 				84A99F6C1DA6EA8D0059C852 /* Products */,
+				433BA94438B6A23CAA1361FE /* Pods */,
+				D881A8E050BA3801A375576A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,11 +131,12 @@
 		84A99F6D1DA6EA8D0059C852 /* VieTaxi */ = {
 			isa = PBXGroup;
 			children = (
-				84A99FA11DA72F230059C852 /* Assets */,
 				84A99FA71DB4AF150059C852 /* Controller */,
+				84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */,
 				84A99F721DA6EA8D0059C852 /* Main.storyboard */,
 				84A99F781DA6EA8D0059C852 /* Assets.xcassets */,
 				84A99F7A1DA6EA8D0059C852 /* LaunchScreen.storyboard */,
+				84F08B331DFB866C00BF89B8 /* GoogleService-Info.plist */,
 				84A99F7D1DA6EA8D0059C852 /* Info.plist */,
 				84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */,
 			);
@@ -136,24 +161,27 @@
 			path = VieTaxiUITests;
 			sourceTree = "<group>";
 		};
-		84A99FA11DA72F230059C852 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				84A99F9F1DA72E2D0059C852 /* VieTaxi.png */,
-			);
-			name = Assets;
-			sourceTree = "<group>";
-		};
 		84A99FA71DB4AF150059C852 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */,
-				84A99F701DA6EA8D0059C852 /* ViewController.swift */,
+				84E63F961DF9D7CF006A5BDF /* LoginController.swift */,
 				84A99FA21DB2CBE30059C852 /* RegisterController.swift */,
 				84A99FA41DB40D630059C852 /* ViajesController.swift */,
 				84A99FA81DB4C04B0059C852 /* PagoController.swift */,
+				84A99FAA1DB542B40059C852 /* ProfileController.swift */,
+				84F08B311DFB4B7500BF89B8 /* TabBarSelectedController.swift */,
+				84FBF6661E00538A0073B4A8 /* Helpers.swift */,
+				84FBF6681E008C3A0073B4A8 /* GoogleMapsDirections.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		D881A8E050BA3801A375576A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A69A25793F0F837B0B111091 /* Pods_VieTaxi.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +191,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A99F961DA6EA8D0059C852 /* Build configuration list for PBXNativeTarget "VieTaxi" */;
 			buildPhases = (
+				2C9D4D390B6075EA79A47CF5 /* [CP] Check Pods Manifest.lock */,
 				84A99F671DA6EA8D0059C852 /* Sources */,
 				84A99F681DA6EA8D0059C852 /* Frameworks */,
 				84A99F691DA6EA8D0059C852 /* Resources */,
+				CCF8E8CF4FF35D1B37622607 /* [CP] Embed Pods Frameworks */,
+				490F51E2C17B544761B71CF8 /* [CP] Copy Pods Resources */,
+				8427D8001DFA171D00A8109F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -266,8 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A99FA01DA72E2D0059C852 /* VieTaxi.png in Resources */,
 				84A99F7C1DA6EA8D0059C852 /* LaunchScreen.storyboard in Resources */,
+				84F08B341DFB866C00BF89B8 /* GoogleService-Info.plist in Resources */,
 				84A99F791DA6EA8D0059C852 /* Assets.xcassets in Resources */,
 				84A99F741DA6EA8D0059C852 /* Main.storyboard in Resources */,
 			);
@@ -289,15 +321,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C9D4D390B6075EA79A47CF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		490F51E2C17B544761B71CF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VieTaxi/Pods-VieTaxi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8427D8001DFA171D00A8109F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 358561a1021fee376e0af713d07d6bb85a0f5bd4 b7f6f672850a531a76a514bb5a6b9730c6063d7ba681682c200f4f6c297aa53a";
+		};
+		CCF8E8CF4FF35D1B37622607 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VieTaxi/Pods-VieTaxi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84A99F671DA6EA8D0059C852 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A99FAB1DB542B40059C852 /* ProfileController.swift in Sources */,
 				84A99FA91DB4C04B0059C852 /* PagoController.swift in Sources */,
+				84F08B321DFB4B7500BF89B8 /* TabBarSelectedController.swift in Sources */,
+				84FBF6691E008C3B0073B4A8 /* GoogleMapsDirections.swift in Sources */,
 				84A99FA31DB2CBE30059C852 /* RegisterController.swift in Sources */,
+				84FBF6671E00538A0073B4A8 /* Helpers.swift in Sources */,
 				84A99F771DA6EA8D0059C852 /* VieTaxi.xcdatamodeld in Sources */,
-				84A99F711DA6EA8D0059C852 /* ViewController.swift in Sources */,
+				84E63F971DF9D7CF006A5BDF /* LoginController.swift in Sources */,
 				84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */,
 				84A99FA51DB40D640059C852 /* ViajesController.swift in Sources */,
 			);
@@ -449,6 +546,7 @@
 		};
 		84A99F971DA6EA8D0059C852 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD3CBE8A06A3303DD3283283 /* Pods-VieTaxi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7962FWHR52;
@@ -463,6 +561,7 @@
 		};
 		84A99F981DA6EA8D0059C852 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01F7DEC12A4D30E11CD67E09 /* Pods-VieTaxi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7962FWHR52;

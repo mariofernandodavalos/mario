@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VieTaxi/AppDelegate.swift"
-            timestampString = "497498410.254873"
+            timestampString = "503079688.536777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "applicationDidBecomeActive(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,29 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VieTaxi/ViajesController.swift"
-            timestampString = "498341934.991413"
+            filePath = "VieTaxi/ProfileController.swift"
+            timestampString = "498423691.708468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "searchBarSearchButtonClicked(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VieTaxi/ViajesController.swift"
-            timestampString = "498341934.991413"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "showSearchBar(_:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "EditorButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
