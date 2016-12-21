@@ -36,6 +36,7 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
     var LogoSave: UIImageView!
     var LogoChan: UIImageView!
     
+    public static var TableBarInit:UINavigationController?
      static let MAX_TEXT_SIZE = 30
     
     override func viewDidLoad() {
@@ -47,7 +48,7 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
         LogoSave = Logo
         Facebook.imageView?.contentMode = .scaleAspectFit
         Google.imageView?.contentMode = .scaleAspectFit
-        
+        LoginController.TableBarInit=self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
         //GIDSignIn.sharedInstance().uiDelegate = self
         
     }
@@ -71,7 +72,7 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
         if GIDSignIn.sharedInstance().hasAuthInKeychain(){
             
                 let TB = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
-                self.present(TB, animated: true, completion: nil)
+                self.present(LoginController.TableBarInit!, animated: true, completion: nil)
             
         } else{
                 let alert = UIAlertController(title: "Error de acceso", message: "Haz cancelado el acceso a Facebook", preferredStyle: UIAlertControllerStyle.alert)
@@ -91,8 +92,8 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
         let email = user.profile.email
         print("Welcome: ,\(userId), \(idToken), \(fullName), \(givenName), \(familyName), \(email)")
         DispatchQueue.main.async {
-            let TB = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
-            self.present(TB, animated: true, completion: nil)
+            
+            self.present(LoginController.TableBarInit!, animated: true, completion: nil)
         }
     }
     
@@ -106,7 +107,7 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
             // User is logged in, use 'accessToken' here.
             DispatchQueue.main.async {
                 let TB = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-                self.present(TB, animated: true, completion: nil)
+                self.present(LoginController.TableBarInit!, animated: true, completion: nil)
                 
             }
         }else{
@@ -124,7 +125,7 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 DispatchQueue.main.async {
                     let TB = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-                    self.present(TB, animated: true, completion: nil)
+                    self.present(LoginController.TableBarInit!, animated: true, completion: nil)
                     
                 }
             }
@@ -139,7 +140,7 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
             
             DispatchQueue.main.async {
                 let TB = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-                self.present(TB, animated: true, completion: nil)
+                self.present(LoginController.TableBarInit!, animated: true, completion: nil)
                 
             }        }
         //GIDSignIn.sharedInstance().signOut()

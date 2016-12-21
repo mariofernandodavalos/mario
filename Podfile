@@ -13,5 +13,6 @@ target ‘VieTaxi’ do
   pod 'Google/SignIn'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'PayPal-iOS-SDK'
 
 end

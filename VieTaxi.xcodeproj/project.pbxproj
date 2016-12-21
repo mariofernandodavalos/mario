@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000787F0FEEC9B4A3066AA2B /* Pods_VieTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A25793F0F837B0B111091 /* Pods_VieTaxi.framework */; };
+		848B56901E048B5F0027983E /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B568F1E048B5F0027983E /* CardController.swift */; };
 		84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */; };
 		84A99F741DA6EA8D0059C852 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F721DA6EA8D0059C852 /* Main.storyboard */; };
 		84A99F771DA6EA8D0059C852 /* VieTaxi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */; };
@@ -22,6 +23,12 @@
 		84E63F971DF9D7CF006A5BDF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E63F961DF9D7CF006A5BDF /* LoginController.swift */; };
 		84F08B321DFB4B7500BF89B8 /* TabBarSelectedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F08B311DFB4B7500BF89B8 /* TabBarSelectedController.swift */; };
 		84F08B341DFB866C00BF89B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84F08B331DFB866C00BF89B8 /* GoogleService-Info.plist */; };
+		84F996A71E092A4A008E15DF /* EvironmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F996A61E092A4A008E15DF /* EvironmentController.swift */; };
+		84F996A91E0933E0008E15DF /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F996A81E0933E0008E15DF /* libPayPalMobile.a */; };
+		84F996B01E093BB9008E15DF /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F996AD1E093BB9008E15DF /* libCardIO.a */; };
+		84F996B11E093BB9008E15DF /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F996AE1E093BB9008E15DF /* libopencv_imgproc.a */; };
+		84F996B21E093BB9008E15DF /* PagoController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F996AF1E093BB9008E15DF /* PagoController.a */; };
+		84F996B31E093C84008E15DF /* VieTaxi-Bridging-Header.h in Resources */ = {isa = PBXBuildFile; fileRef = 84F996AB1E093A03008E15DF /* VieTaxi-Bridging-Header.h */; };
 		84FBF6671E00538A0073B4A8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBF6661E00538A0073B4A8 /* Helpers.swift */; };
 		84FBF6691E008C3B0073B4A8 /* GoogleMapsDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FBF6681E008C3A0073B4A8 /* GoogleMapsDirections.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		01F7DEC12A4D30E11CD67E09 /* Pods-VieTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTaxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-VieTaxi/Pods-VieTaxi.release.xcconfig"; sourceTree = "<group>"; };
+		848B568F1E048B5F0027983E /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		84A99F6B1DA6EA8D0059C852 /* VieTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VieTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A99F731DA6EA8D0059C852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +73,12 @@
 		84E63F961DF9D7CF006A5BDF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		84F08B311DFB4B7500BF89B8 /* TabBarSelectedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSelectedController.swift; sourceTree = "<group>"; };
 		84F08B331DFB866C00BF89B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84F996A61E092A4A008E15DF /* EvironmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvironmentController.swift; sourceTree = "<group>"; };
+		84F996A81E0933E0008E15DF /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
+		84F996AB1E093A03008E15DF /* VieTaxi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VieTaxi-Bridging-Header.h"; path = "../VieTaxi-Bridging-Header.h"; sourceTree = "<group>"; };
+		84F996AD1E093BB9008E15DF /* libCardIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCardIO.a; sourceTree = "<group>"; };
+		84F996AE1E093BB9008E15DF /* libopencv_imgproc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libopencv_imgproc.a; sourceTree = "<group>"; };
+		84F996AF1E093BB9008E15DF /* PagoController.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = PagoController.a; sourceTree = "<group>"; };
 		84FBF6661E00538A0073B4A8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		84FBF6681E008C3A0073B4A8 /* GoogleMapsDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsDirections.swift; sourceTree = "<group>"; };
 		A69A25793F0F837B0B111091 /* Pods_VieTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F996B11E093BB9008E15DF /* libopencv_imgproc.a in Frameworks */,
+				84F996A91E0933E0008E15DF /* libPayPalMobile.a in Frameworks */,
+				84F996B21E093BB9008E15DF /* PagoController.a in Frameworks */,
+				84F996B01E093BB9008E15DF /* libCardIO.a in Frameworks */,
 				000787F0FEEC9B4A3066AA2B /* Pods_VieTaxi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +157,11 @@
 				84F08B331DFB866C00BF89B8 /* GoogleService-Info.plist */,
 				84A99F7D1DA6EA8D0059C852 /* Info.plist */,
 				84A99F751DA6EA8D0059C852 /* VieTaxi.xcdatamodeld */,
+				84F996AB1E093A03008E15DF /* VieTaxi-Bridging-Header.h */,
+				84F996A81E0933E0008E15DF /* libPayPalMobile.a */,
+				84F996AD1E093BB9008E15DF /* libCardIO.a */,
+				84F996AE1E093BB9008E15DF /* libopencv_imgproc.a */,
+				84F996AF1E093BB9008E15DF /* PagoController.a */,
 			);
 			path = VieTaxi;
 			sourceTree = "<group>";
@@ -172,6 +195,8 @@
 				84F08B311DFB4B7500BF89B8 /* TabBarSelectedController.swift */,
 				84FBF6661E00538A0073B4A8 /* Helpers.swift */,
 				84FBF6681E008C3A0073B4A8 /* GoogleMapsDirections.swift */,
+				848B568F1E048B5F0027983E /* CardController.swift */,
+				84F996A61E092A4A008E15DF /* EvironmentController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -298,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F996B31E093C84008E15DF /* VieTaxi-Bridging-Header.h in Resources */,
 				84A99F7C1DA6EA8D0059C852 /* LaunchScreen.storyboard in Resources */,
 				84F08B341DFB866C00BF89B8 /* GoogleService-Info.plist in Resources */,
 				84A99F791DA6EA8D0059C852 /* Assets.xcassets in Resources */,
@@ -391,8 +417,10 @@
 				84A99FA91DB4C04B0059C852 /* PagoController.swift in Sources */,
 				84F08B321DFB4B7500BF89B8 /* TabBarSelectedController.swift in Sources */,
 				84FBF6691E008C3B0073B4A8 /* GoogleMapsDirections.swift in Sources */,
+				84F996A71E092A4A008E15DF /* EvironmentController.swift in Sources */,
 				84A99FA31DB2CBE30059C852 /* RegisterController.swift in Sources */,
 				84FBF6671E00538A0073B4A8 /* Helpers.swift in Sources */,
+				848B56901E048B5F0027983E /* CardController.swift in Sources */,
 				84A99F771DA6EA8D0059C852 /* VieTaxi.xcdatamodeld in Sources */,
 				84E63F971DF9D7CF006A5BDF /* LoginController.swift in Sources */,
 				84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */,
@@ -496,6 +524,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "VieTaxi-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -538,6 +567,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "VieTaxi-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -553,6 +583,10 @@
 				INFOPLIST_FILE = VieTaxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VieTaxi",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -568,6 +602,10 @@
 				INFOPLIST_FILE = VieTaxi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VieTaxi",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vietaxi.VieTaxi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

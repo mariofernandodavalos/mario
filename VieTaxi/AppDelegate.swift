@@ -17,7 +17,6 @@ import GGLSignIn
 import GoogleMaps
 
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
@@ -34,11 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        
-        GMSServices.provideAPIKey("AIzaSyCAhqJmhpR-Qx9rFWRLsWXl3uadQqXPQJs")
+        //AIzaSyCAhqJmhpR-Qx9rFWRLsWXl3uadQqXPQJs
+        GMSServices.provideAPIKey("AIzaSyB-EV-MfJwe7_q-dl4vFY8wHrH7Z-17ziI")
         
         GIDSignIn.sharedInstance().delegate = self
 
+        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "Ab8RoUjDYTS7_0x90mVyxzmkfEofWmdStkQhRyx_pLkpTRuYwoEbscey9hhOqxn1XHmhj6L8tNDSPFDR",
+                                                                PayPalEnvironmentSandbox:
+            "AVIh-mjsr9vEz1EaRdbm3JwC0-_qdV-MNVzjalBA2fiHJX6VEJeu04y92RMicG44R0PuD03Ud3Or-a-d"])
+        
         return true
     }
     public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool

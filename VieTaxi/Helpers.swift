@@ -24,6 +24,14 @@ class FormTextField: UITextField {
     
 }
 
+class Caller: NSObject {
+    class func call(tel:String) {
+        if let url = NSURL(string: "tel://"+tel) {
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
+}
+
 public class AutoCompleteTextField:UITextField {
     /// Manages the instance of tableview
     private var autoCompleteTableView:UITableView?
@@ -67,7 +75,9 @@ public class AutoCompleteTextField:UITextField {
     public var autoCompleteStrings:[String]?{
         didSet{ reload() }
     }
-    
+    public var autoCompletePlaceId:[String]?{
+        didSet{ reload() }
+    }
     
     //MARK: - Init
     override init(frame: CGRect) {
@@ -191,9 +201,11 @@ extension AutoCompleteTextField: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath as IndexPath)
-        
+        let paId = self.autoCompletePlaceId?[indexPath.row]
         if let selectedText = cell?.textLabel?.text {
+            self.accessibilityLabel = paId
             self.text = selectedText
+            self.resignFirstResponder()
             onSelect(selectedText, indexPath as NSIndexPath)
         }
         

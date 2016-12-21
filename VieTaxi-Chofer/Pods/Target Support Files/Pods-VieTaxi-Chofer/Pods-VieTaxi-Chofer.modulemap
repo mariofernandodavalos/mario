@@ -1,0 +1,6 @@
+framework module Pods_VieTaxi_Chofer {
+  umbrella header "Pods-VieTaxi-Chofer-umbrella.h"
+
+  export *
+  module * { export * }
+}

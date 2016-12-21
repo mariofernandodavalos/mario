@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		847A317E1E037C7C00F29F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A317D1E037C7C00F29F22 /* AppDelegate.swift */; };
+		847A31831E037C7C00F29F22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847A31811E037C7C00F29F22 /* Main.storyboard */; };
+		847A31861E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847A31841E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodeld */; };
+		847A31881E037C7C00F29F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847A31871E037C7C00F29F22 /* Assets.xcassets */; };
+		847A318B1E037C7C00F29F22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847A31891E037C7C00F29F22 /* LaunchScreen.storyboard */; };
+		847A31961E037C7D00F29F22 /* VieTaxi_ChoferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A31951E037C7D00F29F22 /* VieTaxi_ChoferTests.swift */; };
+		847A31A11E037C7D00F29F22 /* VieTaxi_ChoferUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A31A01E037C7D00F29F22 /* VieTaxi_ChoferUITests.swift */; };
+		847A31B11E0384D100F29F22 /* VieTaxi Chofer in Resources */ = {isa = PBXBuildFile; fileRef = 847A31AE1E0384D100F29F22 /* VieTaxi Chofer */; };
+		847A31B21E0384D100F29F22 /* VieTaxi ChoferTests in Resources */ = {isa = PBXBuildFile; fileRef = 847A31AF1E0384D100F29F22 /* VieTaxi ChoferTests */; };
+		847A31B31E0384D100F29F22 /* VieTaxi ChoferUITests in Resources */ = {isa = PBXBuildFile; fileRef = 847A31B01E0384D100F29F22 /* VieTaxi ChoferUITests */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		847A31921E037C7D00F29F22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847A31721E037C7B00F29F22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847A31791E037C7B00F29F22;
+			remoteInfo = "VieTaxi Chofer";
+		};
+		847A319D1E037C7D00F29F22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847A31721E037C7B00F29F22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847A31791E037C7B00F29F22;
+			remoteInfo = "VieTaxi Chofer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		847A317A1E037C7B00F29F22 /* VieTaxi Chofer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VieTaxi Chofer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847A317D1E037C7C00F29F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		847A31821E037C7C00F29F22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847A31851E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VieTaxi_Chofer.xcdatamodel; sourceTree = "<group>"; };
+		847A31871E037C7C00F29F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		847A318A1E037C7C00F29F22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		847A318C1E037C7C00F29F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847A31911E037C7D00F29F22 /* VieTaxi ChoferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VieTaxi ChoferTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847A31951E037C7D00F29F22 /* VieTaxi_ChoferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieTaxi_ChoferTests.swift; sourceTree = "<group>"; };
+		847A31971E037C7D00F29F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847A319C1E037C7D00F29F22 /* VieTaxi ChoferUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VieTaxi ChoferUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		847A31A01E037C7D00F29F22 /* VieTaxi_ChoferUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VieTaxi_ChoferUITests.swift; sourceTree = "<group>"; };
+		847A31A21E037C7D00F29F22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847A31AE1E0384D100F29F22 /* VieTaxi Chofer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "VieTaxi Chofer"; sourceTree = "<group>"; };
+		847A31AF1E0384D100F29F22 /* VieTaxi ChoferTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "VieTaxi ChoferTests"; sourceTree = "<group>"; };
+		847A31B01E0384D100F29F22 /* VieTaxi ChoferUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "VieTaxi ChoferUITests"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		847A31771E037C7B00F29F22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847A318E1E037C7D00F29F22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847A31991E037C7D00F29F22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		847A31711E037C7B00F29F22 = {
+			isa = PBXGroup;
+			children = (
+				847A31AE1E0384D100F29F22 /* VieTaxi Chofer */,
+				847A31AF1E0384D100F29F22 /* VieTaxi ChoferTests */,
+				847A31B01E0384D100F29F22 /* VieTaxi ChoferUITests */,
+				847A317C1E037C7B00F29F22 /* VieTaxi Chofer */,
+				847A31941E037C7D00F29F22 /* VieTaxi ChoferTests */,
+				847A319F1E037C7D00F29F22 /* VieTaxi ChoferUITests */,
+				847A317B1E037C7B00F29F22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		847A317B1E037C7B00F29F22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				847A317A1E037C7B00F29F22 /* VieTaxi Chofer.app */,
+				847A31911E037C7D00F29F22 /* VieTaxi ChoferTests.xctest */,
+				847A319C1E037C7D00F29F22 /* VieTaxi ChoferUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		847A317C1E037C7B00F29F22 /* VieTaxi Chofer */ = {
+			isa = PBXGroup;
+			children = (
+				847A317D1E037C7C00F29F22 /* AppDelegate.swift */,
+				847A31811E037C7C00F29F22 /* Main.storyboard */,
+				847A31871E037C7C00F29F22 /* Assets.xcassets */,
+				847A31891E037C7C00F29F22 /* LaunchScreen.storyboard */,
+				847A318C1E037C7C00F29F22 /* Info.plist */,
+				847A31841E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodeld */,
+			);
+			path = "VieTaxi Chofer";
+			sourceTree = "<group>";
+		};
+		847A31941E037C7D00F29F22 /* VieTaxi ChoferTests */ = {
+			isa = PBXGroup;
+			children = (
+				847A31951E037C7D00F29F22 /* VieTaxi_ChoferTests.swift */,
+				847A31971E037C7D00F29F22 /* Info.plist */,
+			);
+			path = "VieTaxi ChoferTests";
+			sourceTree = "<group>";
+		};
+		847A319F1E037C7D00F29F22 /* VieTaxi ChoferUITests */ = {
+			isa = PBXGroup;
+			children = (
+				847A31A01E037C7D00F29F22 /* VieTaxi_ChoferUITests.swift */,
+				847A31A21E037C7D00F29F22 /* Info.plist */,
+			);
+			path = "VieTaxi ChoferUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		847A31791E037C7B00F29F22 /* VieTaxi Chofer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847A31A51E037C7D00F29F22 /* Build configuration list for PBXNativeTarget "VieTaxi Chofer" */;
+			buildPhases = (
+				847A31761E037C7B00F29F22 /* Sources */,
+				847A31771E037C7B00F29F22 /* Frameworks */,
+				847A31781E037C7B00F29F22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VieTaxi Chofer";
+			productName = "VieTaxi Chofer";
+			productReference = 847A317A1E037C7B00F29F22 /* VieTaxi Chofer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		847A31901E037C7D00F29F22 /* VieTaxi ChoferTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847A31A81E037C7D00F29F22 /* Build configuration list for PBXNativeTarget "VieTaxi ChoferTests" */;
+			buildPhases = (
+				847A318D1E037C7D00F29F22 /* Sources */,
+				847A318E1E037C7D00F29F22 /* Frameworks */,
+				847A318F1E037C7D00F29F22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847A31931E037C7D00F29F22 /* PBXTargetDependency */,
+			);
+			name = "VieTaxi ChoferTests";
+			productName = "VieTaxi ChoferTests";
+			productReference = 847A31911E037C7D00F29F22 /* VieTaxi ChoferTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		847A319B1E037C7D00F29F22 /* VieTaxi ChoferUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847A31AB1E037C7D00F29F22 /* Build configuration list for PBXNativeTarget "VieTaxi ChoferUITests" */;
+			buildPhases = (
+				847A31981E037C7D00F29F22 /* Sources */,
+				847A31991E037C7D00F29F22 /* Frameworks */,
+				847A319A1E037C7D00F29F22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847A319E1E037C7D00F29F22 /* PBXTargetDependency */,
+			);
+			name = "VieTaxi ChoferUITests";
+			productName = "VieTaxi ChoferUITests";
+			productReference = 847A319C1E037C7D00F29F22 /* VieTaxi ChoferUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		847A31721E037C7B00F29F22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = vietaxi;
+				TargetAttributes = {
+					847A31791E037C7B00F29F22 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7962FWHR52;
+						ProvisioningStyle = Automatic;
+					};
+					847A31901E037C7D00F29F22 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7962FWHR52;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 847A31791E037C7B00F29F22;
+					};
+					847A319B1E037C7D00F29F22 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7962FWHR52;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 847A31791E037C7B00F29F22;
+					};
+				};
+			};
+			buildConfigurationList = 847A31751E037C7B00F29F22 /* Build configuration list for PBXProject "VieTaxi Chofer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 847A31711E037C7B00F29F22;
+			productRefGroup = 847A317B1E037C7B00F29F22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				847A31791E037C7B00F29F22 /* VieTaxi Chofer */,
+				847A31901E037C7D00F29F22 /* VieTaxi ChoferTests */,
+				847A319B1E037C7D00F29F22 /* VieTaxi ChoferUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		847A31781E037C7B00F29F22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847A31B21E0384D100F29F22 /* VieTaxi ChoferTests in Resources */,
+				847A318B1E037C7C00F29F22 /* LaunchScreen.storyboard in Resources */,
+				847A31881E037C7C00F29F22 /* Assets.xcassets in Resources */,
+				847A31B31E0384D100F29F22 /* VieTaxi ChoferUITests in Resources */,
+				847A31831E037C7C00F29F22 /* Main.storyboard in Resources */,
+				847A31B11E0384D100F29F22 /* VieTaxi Chofer in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847A318F1E037C7D00F29F22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847A319A1E037C7D00F29F22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		847A31761E037C7B00F29F22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847A31861E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodeld in Sources */,
+				847A317E1E037C7C00F29F22 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847A318D1E037C7D00F29F22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847A31961E037C7D00F29F22 /* VieTaxi_ChoferTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847A31981E037C7D00F29F22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847A31A11E037C7D00F29F22 /* VieTaxi_ChoferUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		847A31931E037C7D00F29F22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847A31791E037C7B00F29F22 /* VieTaxi Chofer */;
+			targetProxy = 847A31921E037C7D00F29F22 /* PBXContainerItemProxy */;
+		};
+		847A319E1E037C7D00F29F22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847A31791E037C7B00F29F22 /* VieTaxi Chofer */;
+			targetProxy = 847A319D1E037C7D00F29F22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		847A31811E037C7C00F29F22 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847A31821E037C7C00F29F22 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		847A31891E037C7C00F29F22 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847A318A1E037C7C00F29F22 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		847A31A31E037C7D00F29F22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		847A31A41E037C7D00F29F22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		847A31A61E037C7D00F29F22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = "VieTaxi Chofer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vietaxi.VieTaxi-Chofer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		847A31A71E037C7D00F29F22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = "VieTaxi Chofer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vietaxi.VieTaxi-Chofer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		847A31A91E037C7D00F29F22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = "VieTaxi ChoferTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vietaxi.VieTaxi-ChoferTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VieTaxi Chofer.app/VieTaxi Chofer";
+			};
+			name = Debug;
+		};
+		847A31AA1E037C7D00F29F22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = "VieTaxi ChoferTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vietaxi.VieTaxi-ChoferTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VieTaxi Chofer.app/VieTaxi Chofer";
+			};
+			name = Release;
+		};
+		847A31AC1E037C7D00F29F22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = "VieTaxi ChoferUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vietaxi.VieTaxi-ChoferUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "VieTaxi Chofer";
+			};
+			name = Debug;
+		};
+		847A31AD1E037C7D00F29F22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7962FWHR52;
+				INFOPLIST_FILE = "VieTaxi ChoferUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vietaxi.VieTaxi-ChoferUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "VieTaxi Chofer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		847A31751E037C7B00F29F22 /* Build configuration list for PBXProject "VieTaxi Chofer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847A31A31E037C7D00F29F22 /* Debug */,
+				847A31A41E037C7D00F29F22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847A31A51E037C7D00F29F22 /* Build configuration list for PBXNativeTarget "VieTaxi Chofer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847A31A61E037C7D00F29F22 /* Debug */,
+				847A31A71E037C7D00F29F22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847A31A81E037C7D00F29F22 /* Build configuration list for PBXNativeTarget "VieTaxi ChoferTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847A31A91E037C7D00F29F22 /* Debug */,
+				847A31AA1E037C7D00F29F22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847A31AB1E037C7D00F29F22 /* Build configuration list for PBXNativeTarget "VieTaxi ChoferUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847A31AC1E037C7D00F29F22 /* Debug */,
+				847A31AD1E037C7D00F29F22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		847A31841E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				847A31851E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodel */,
+			);
+			currentVersion = 847A31851E037C7C00F29F22 /* VieTaxi_Chofer.xcdatamodel */;
+			path = VieTaxi_Chofer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 847A31721E037C7B00F29F22 /* Project object */;
+}
