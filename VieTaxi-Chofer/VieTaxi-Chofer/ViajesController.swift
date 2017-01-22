@@ -64,8 +64,8 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
     @IBAction func RequesTrip(_ sender: UIButton) {
         ButtonRequest.setTitle("VieTaxi Fuera", for: .normal)
         ButtonRequest.backgroundColor = UIColor(red: 186/255, green: 56/255, blue: 48/255, alpha: 1)
-        CardDriver.isHidden = false
-        CardShadow.isHidden = false
+        //CardDriver.isHidden = false
+        //CardShadow.isHidden = false
         ViewMap.settings.myLocationButton = false
         //ButtonRequest.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15), execute: {
@@ -153,7 +153,7 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         self.markerTaxi.rotation = degrees
         self.markerTaxi.map = self.ViewMap
         self.markerTaxi.opacity = 0.9
-    }
+     }
     }
     var markerTaxi = GMSMarker()
     var oldHeading = Int(10)

@@ -12,8 +12,11 @@ import CoreLocation
 import MapKit
 import GoogleMaps
 import GooglePlaces
+import SocketIO
 
 class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate,GMSMapViewDelegate {
+    
+    let socket = SocketIOClient(socketURL: URL(string: "http://apirt.vietaxi.com")!, config: [.log(true), .forcePolling(true)])
     
     @IBOutlet weak var MapView: UIView!
     
@@ -54,6 +57,7 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         super.viewDidLoad()
         MarkerStatic.image = GMSMarker.markerImage(with: UIColor(red: 199/255, green: 150/255, blue: 19/255, alpha: 1))
         initLocationManager()
+        SocketIOConnect()
         
         Ubication.layer.shadowColor = UIColor.black.cgColor
         Ubication.layer.shadowOpacity = 0.6
@@ -82,6 +86,7 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         
         configureTextField()
         handleTextFieldInterfaces()
+        
         
     }
     
@@ -114,6 +119,79 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         CardDriver.isHidden = false
         CardShadow.isHidden = false
         ViewMap.settings.myLocationButton = false
+        
+        var token = "qnPu3sorsj"
+        if let tok = UserDefaults.standard.string(forKey: "token")
+        {
+            token = tok
+        }
+        let JSONtoken = [
+            "token":token/*,
+            "origen":[
+                "lat": 20.718961,
+                "lng": -103.320940
+            ],
+            "destino":[
+                "lat":21.718961,
+                "lng":-104.320940
+            ]*/
+        ]
+        
+        let JSONsolicitar = [
+            "token":token,
+             "origen":[
+             "lat": 20.718961,
+             "lng": -103.320940
+             ],
+             "destino":[
+             "lat":21.718961,
+             "lng":-104.320940
+             ]
+        ] as [String : Any]
+        
+        let JSONInicio = [
+            "origen":[
+                "lat":21.718961,
+                "lng":-104.320940
+            ]
+        ] as [String : Any]
+        let JSONDestino = [
+            "destino":[
+                "lat": 20.718961,
+                "lng": -103.320940
+            ]
+            ] as [String : Any]
+        
+       self.socket.emit("solicitar", JSONsolicitar)
+        
+        self.socket.emit("solicitar", token, JSONInicio, JSONDestino)
+        
+        self.socket.emit("registro", token)
+        
+        self.socket.emit("registro", JSONtoken)
+        
+        self.socket.emitWithAck("registro", token).timingOut(after: 0) {data in
+            print("\(data)")
+        }
+        self.socket.emitWithAck("registro", JSONtoken).timingOut(after: 0) {data in
+            print("\(data)")
+        }
+        
+        self.socket.engineDidOpen(reason: "")
+        /*
+        socket.connect()
+        
+        
+        self.socket.on("cliente") {data, ack in
+            print("\(data)")
+            self.socket.emit("token", token)
+        }
+        self.socket.emitWithAck("cliente", ["token":token]).timingOut(after: 0, callback: {data in
+            print(data)
+        })
+        */
+        
+        
         //ButtonRequest.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15), execute: {
             self.CardDriver.isHidden = true
@@ -513,6 +591,37 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         //HidePhone.isHidden = !HidePhone.isHidden
         PhoneLabel.isHidden = !PhoneLabel.isHidden
     }
-
+    
+    func SocketIOConnect(){
+        var token = ""
+        if let tok = UserDefaults.standard.string(forKey: "token")
+        {
+            token = tok
+        }
+        self.socket.on("connect") {data, ack in
+            //print("\(self.socket.sid)")
+            self.socket.joinNamespace("/chofer")
+            self.socket.emit("registro", token)
+        }
+        self.socket.on("registro"){data, ack in
+            self.SocketIOEvent(dato: data)
+        }
+        self.socket.on("solicitar"){data, ack in
+            print("\(data)")
+            self.SocketIOEvent(dato: data)
+        }
+        self.socket.connect()
+    }
+    func SocketIOEvent(dato:[Any]){
+        do{
+            let data = try JSONSerialization.data(withJSONObject: dato, options: JSONSerialization.WritingOptions.prettyPrinted)
+            if let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+                    print(jsonResult)
+                    if let mensaje = jsonResult.value(forKey: "msj") as? [[String:AnyObject]] {
+                        print(mensaje)
+                    }
+            }
+        }catch{print("socketData Error")}
+    }
 }
 

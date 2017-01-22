@@ -79,7 +79,7 @@ class EvironmentController: UIViewController , PayPalPaymentDelegate, PayPalProf
         futurePaymentViewController.dismiss(animated: true, completion: {
             DispatchQueue.main.async {
                 let TB = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-                self.present(LoginController.TableBarInit!, animated: true, completion: nil)
+                self.present(AppDelegate.TableBarInit!, animated: true, completion: nil)
                 
             }
         })
@@ -92,7 +92,7 @@ class EvironmentController: UIViewController , PayPalPaymentDelegate, PayPalProf
             print(futurePaymentAuthorization.description)
             print(self.environment)
             DispatchQueue.main.async {
-            LoginController.TableBarInit?.popToRootViewController(animated: true)
+            AppDelegate.TableBarInit?.popToRootViewController(animated: true)
             }
         })
     }

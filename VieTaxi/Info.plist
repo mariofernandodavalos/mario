@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>VieTaxi requiere tu ubicacion</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>VieTaxi requiere tu ubicacion</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -38,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0.1</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -53,7 +49,6 @@
 			</dict>
 		</array>
 	</dict>
-    
 	<key>FacebookAppID</key>
 	<string>383194315347901</string>
 	<key>FacebookDisplayName</key>
@@ -65,12 +60,53 @@
 		<string>fbauth2</string>
 		<string>fbapi</string>
 		<string>fb-messenger-api</string>
-        <string>com.paypal.ppclient.touch.v1</string>
-        <string>com.paypal.ppclient.touch.v2</string>
-        <string>org-appextension-feature-password-management</string>
+		<string>com.paypal.ppclient.touch.v1</string>
+		<string>com.paypal.ppclient.touch.v2</string>
+		<string>org-appextension-feature-password-management</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+             <key>apirt.vietaxi.com</key>
+             <dict>
+                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                 <true/>
+                 <key>NSIncludesSubdomains</key>
+                 <true/>
+             </dict>
+             <key>http://apirt.vietaxi.com/</key>
+             <dict>
+                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                 <true/>
+                 <key>NSIncludesSubdomains</key>
+                 <true/>
+             </dict>
+
+			<key>api.vietaxi.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>http://api.vietaxi.com/usuario/login/</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>VieTaxi requiere tu ubicacion</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>VieTaxi requiere tu ubicacion</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000787F0FEEC9B4A3066AA2B /* Pods_VieTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A25793F0F837B0B111091 /* Pods_VieTaxi.framework */; };
+		8483712E1E15BB5C00E902C4 /* PhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483712D1E15BB5C00E902C4 /* PhoneController.swift */; };
 		848B56901E048B5F0027983E /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B568F1E048B5F0027983E /* CardController.swift */; };
 		84A99F6F1DA6EA8D0059C852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */; };
 		84A99F741DA6EA8D0059C852 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A99F721DA6EA8D0059C852 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		01F7DEC12A4D30E11CD67E09 /* Pods-VieTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTaxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-VieTaxi/Pods-VieTaxi.release.xcconfig"; sourceTree = "<group>"; };
+		8483712D1E15BB5C00E902C4 /* PhoneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneController.swift; sourceTree = "<group>"; };
 		848B568F1E048B5F0027983E /* CardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
 		84A99F6B1DA6EA8D0059C852 /* VieTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VieTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A99F6E1DA6EA8D0059C852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		84A99FA71DB4AF150059C852 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8483712D1E15BB5C00E902C4 /* PhoneController.swift */,
 				84E63F961DF9D7CF006A5BDF /* LoginController.swift */,
 				84A99FA21DB2CBE30059C852 /* RegisterController.swift */,
 				84A99FA41DB40D630059C852 /* ViajesController.swift */,
@@ -418,6 +421,7 @@
 				84F08B321DFB4B7500BF89B8 /* TabBarSelectedController.swift in Sources */,
 				84FBF6691E008C3B0073B4A8 /* GoogleMapsDirections.swift in Sources */,
 				84F996A71E092A4A008E15DF /* EvironmentController.swift in Sources */,
+				8483712E1E15BB5C00E902C4 /* PhoneController.swift in Sources */,
 				84A99FA31DB2CBE30059C852 /* RegisterController.swift in Sources */,
 				84FBF6671E00538A0073B4A8 /* Helpers.swift in Sources */,
 				848B56901E048B5F0027983E /* CardController.swift in Sources */,

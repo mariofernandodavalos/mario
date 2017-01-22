@@ -16,11 +16,15 @@ import GoogleSignIn
 import GGLSignIn
 import GoogleMaps
 
+import Alamofire
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
+    
+    public static var TableBarInit:UINavigationController?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -41,7 +45,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: "Ab8RoUjDYTS7_0x90mVyxzmkfEofWmdStkQhRyx_pLkpTRuYwoEbscey9hhOqxn1XHmhj6L8tNDSPFDR",
                                                                PayPalEnvironmentSandbox:
             "AVIh-mjsr9vEz1EaRdbm3JwC0-_qdV-MNVzjalBA2fiHJX6VEJeu04y92RMicG44R0PuD03Ud3Or-a-d"])
+      
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        AppDelegate.TableBarInit = storyboard.instantiateViewController(withIdentifier: "NavigationVC") as? UINavigationController
+        let Login = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginController
+        if let tok = UserDefaults.standard.string(forKey: "token")
+        {
+            print(tok)
+            Alamofire.request("http://api.vietaxi.com/chofer/?token="+tok).validate().responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    if let json = response.result.value {
+                        print("JSON: \(json)")
+                        do{
+                            let result = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String:Any]
+                            if let nombre = result["nombre"] as? String{UserDefaults.standard.setValue(nombre, forKey: "nombre")}
+                            if let apellidos = result["apellidos"] as? String{UserDefaults.standard.setValue(apellidos, forKey: "apellidos")}
+                            if let telefono = result["telefono"] as? String{UserDefaults.standard.setValue(telefono, forKey: "telefono")}
+                            if let email = result["email"] as? String{UserDefaults.standard.setValue(email, forKey: "email")}
+                            if let rfc = result["rfc"] as? String{UserDefaults.standard.setValue(rfc, forKey: "rfc")}
+                            if let calificacion = result["calificacion"] as? String{UserDefaults.standard.setValue(calificacion, forKey: "calificacion")}
+                            if let domicilio = result["domicilio"] as? String{UserDefaults.standard.setValue(domicilio, forKey: "domicilio")}
+                            if let licencia = result["licencia"] as? String{UserDefaults.standard.setValue(licencia, forKey: "licencia")}
+                        }
+                        catch let error as NSError{
+                            print("Error: \(error.localizedDescription)")
+                        }
+                    }
+                    self.window?.rootViewController = AppDelegate.TableBarInit
+                    self.window?.makeKeyAndVisible()
+                    
+                case .failure(let error):
+                    print(error)
+                    self.window?.rootViewController = Login
+                    self.window?.makeKeyAndVisible()
+                }
+                
+            }
+        }else{
+            self.window?.rootViewController = Login
+            self.window?.makeKeyAndVisible()
+        }
+
         return true
     }
     public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool

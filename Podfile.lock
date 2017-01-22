@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Alamofire (4.2.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -107,10 +108,12 @@ PODS:
   - PayPal-iOS-SDK/CardIO (2.16.1):
     - CardIO (~> 5.4.1)
   - PayPal-iOS-SDK/Core (2.16.1)
+  - Socket.IO-Client-Swift (8.2.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
+  - Alamofire (~> 4.0)
   - Crashlytics
   - Fabric
   - FacebookCore
@@ -121,10 +124,12 @@ DEPENDENCIES:
   - GooglePlaces
   - ORStackView (~> 3.0)
   - PayPal-iOS-SDK
+  - Socket.IO-Client-Swift (~> 8.2.0)
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
@@ -151,8 +156,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
   PayPal-iOS-SDK: 774ac7de2d7c3b0ee7e8a35f8b347fd07787321b
+  Socket.IO-Client-Swift: 900cf511777045c80d1ce1f11f71261e87765dd1
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 82b112f7aa9048df6b9cecd32c334ec3cb4f9bf2
+PODFILE CHECKSUM: ca606933ed8154a933678c79ce754b3f860270ae
 
 COCOAPODS: 1.1.1

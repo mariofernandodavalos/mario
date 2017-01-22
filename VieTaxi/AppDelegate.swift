@@ -8,20 +8,25 @@
 
 import UIKit
 import CoreData
+
 import FacebookCore
+
 import Fabric
 import Crashlytics
+
 import Google
 import GoogleSignIn
 import GGLSignIn
 import GoogleMaps
 
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
+    public static var TableBarInit:UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,8 +47,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                                 PayPalEnvironmentSandbox:
             "AVIh-mjsr9vEz1EaRdbm3JwC0-_qdV-MNVzjalBA2fiHJX6VEJeu04y92RMicG44R0PuD03Ud3Or-a-d"])
         
-        return true
+        //self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        AppDelegate.TableBarInit = storyboard.instantiateViewController(withIdentifier: "NavigationVC") as? UINavigationController
+        let Login = storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginController
+        if let tok = UserDefaults.standard.string(forKey: "token")
+        {
+            print(tok)
+            Alamofire.request("http://api.vietaxi.com/persona/?token="+tok).validate().responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    if let json = response.result.value {
+                        print("JSON: \(json)")
+                        do{
+                            let result = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String:Any]
+                            if let nombre = result["nombre"] as? String{UserDefaults.standard.setValue(nombre, forKey: "nombre")}
+                            if let apellidos = result["apellidos"] as? String{UserDefaults.standard.setValue(apellidos, forKey: "apellidos")}
+                            if let tel = result["tel"] as? String{UserDefaults.standard.setValue(tel, forKey: "tel")}
+                            if let email = result["email"] as? String{UserDefaults.standard.setValue(email, forKey: "email")}
+                            if let rfc = result["rfc"] as? String{UserDefaults.standard.setValue(rfc, forKey: "rfc")}
+                            if let calificacion = result["calificacion"] as? String{UserDefaults.standard.setValue(calificacion, forKey: "calificacion")}
+                        }
+                        catch let error as NSError{
+                            print("Error: \(error.localizedDescription)")
+                        }
+                    }
+                    self.window?.rootViewController = AppDelegate.TableBarInit
+                    self.window?.makeKeyAndVisible()
+                    
+                case .failure(let error):
+                    print(error)
+                    self.window?.rootViewController = Login
+                    self.window?.makeKeyAndVisible()
+                }
+                
+            }
+        }else{
+            self.window?.rootViewController = Login
+            self.window?.makeKeyAndVisible()
+        }
+               return true
+        
     }
+    
     public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool
     {
         let isFacebookURL = SDKApplicationDelegate.shared.application(app,
@@ -74,23 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             let email = user.profile.email
             print("Welcome: ,\(fullName), \(givenName), \(familyName), \(email)")
             
-            /* check for user's token
-            if GIDSignIn.sharedInstance().hasAuthInKeychain() {
-                /* Code to show your tab bar controller */
-                print("user is signed in")
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                if let tabBarVC = sb.instantiateViewController(withIdentifier: "TabController") as? UITabBarController {
-                    window!.rootViewController = tabBarVC
-                }
-            } else {
-                print("user is NOT signed in")
-                /* code to show your login VC */
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                if let tabBarVC = sb.instantiateViewControllerWithIdentifier("ViewController") as? ViewController {
-                    window!.rootViewController = tabBarVC
-                }
-            }
-           */
         } else {
             print("\(error.localizedDescription)")
         }
@@ -111,6 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+      
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

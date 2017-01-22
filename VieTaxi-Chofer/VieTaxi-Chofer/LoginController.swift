@@ -8,14 +8,10 @@
 
 import UIKit
 import QuartzCore
-import FacebookCore
-import FacebookLogin
 
-import Google
-import GoogleSignIn
-import GGLSignIn
+import Alamofire
 
-class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
+class LoginController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var UserLabel: UITextField!
@@ -30,14 +26,10 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
     
     @IBOutlet weak var VieTaxi: UIImageView!
     
-    @IBOutlet weak var Facebook: UIButton!
-    @IBOutlet weak var Google: UIButton!
-    
     var LogoSave: UIImageView!
     var LogoChan: UIImageView!
     
      static let MAX_TEXT_SIZE = 30
-    public static var TableBarInit:UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,113 +38,130 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
         self.UserLabel.layer.cornerRadius = 15.0
         self.PassLabel.layer.cornerRadius = 15.0
         LogoSave = Logo
-        Facebook.imageView?.contentMode = .scaleAspectFit
-        Google.imageView?.contentMode = .scaleAspectFit
-        LoginController.TableBarInit=self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-        //GIDSignIn.sharedInstance().uiDelegate = self
         
     }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        
-        
+    //MARK: Overrides
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches , with: event)
+        self.view.endEditing(true)
     }
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-        //myActivityIndicator.stopAnimating()
-    }
-    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
-        self.present(viewController, animated: true, completion: nil)
-        print("Sign in presented")
-    }
-    
-    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
-        self.dismiss(animated: true, completion: nil)
-        print("Sign in dismiss")
-       DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-        if GIDSignIn.sharedInstance().hasAuthInKeychain(){
-            
-                let TB = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
-                self.present(LoginController.TableBarInit!, animated: true, completion: nil)
-            
-        } else{
-                let alert = UIAlertController(title: "Error de acceso", message: "Haz cancelado el acceso a Facebook", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
-        })
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        //self.dismiss(animated: true, completion: nil)
-        let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken // Safe to send to the server
-        let fullName = user.profile.name
-        let givenName = user.profile.givenName
-        let familyName = user.profile.familyName
-        let email = user.profile.email
-        print("Welcome: ,\(userId), \(idToken), \(fullName), \(givenName), \(familyName), \(email)")
-        DispatchQueue.main.async {
-            let TB = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
-            self.present(LoginController.TableBarInit!, animated: true, completion: nil)
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func FacebookLogin(_ sender: Any) {
-        if let accessToken = AccessToken.current {
-            // User is logged in, use 'accessToken' here.
-            DispatchQueue.main.async {
-                let TB = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-                self.present(LoginController.TableBarInit!, animated: true, completion: nil)
-                
-            }
-        }else{
-        let loginManager = LoginManager()
-        loginManager.logIn([ .publicProfile, .email ], viewController: self) { loginResult in
-            switch loginResult {
-            case .failed(let error):
+    override func viewDidAppear(_ animated: Bool) {
+        self.UserInfoLoad()
+    }
+    //MARK:Login
+    @IBAction func LoginFunction(_ sender: UIButton) {
+        let User:String = UserLabel.text!
+        let Pass:String = PassLabel.text!
+        let parameters: Parameters = [
+            "modo": 0,
+            "app": 2,
+            "email":User,
+            "password":Pass
+        ]
+        LoginFunc(parameters: parameters)
+    }
+    func LoginFunc(parameters: Parameters){
+        Alamofire.request("http://api.vietaxi.com/usuario/login/", method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON { response in
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                if let json = response.result.value {
+                    print("JSON: \(json)")
+                    do{
+                        let result = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String:Any]
+                        if let token = result["token"] as? String{
+                            UserDefaults.standard.setValue(token, forKey: "token")
+                            self.UserInfoLoad()
+                        self.present(AppDelegate.TableBarInit!, animated: true, completion: nil)
+                        }
+                    }
+                    catch let error as NSError{
+                        print("Error: \(error.localizedDescription)")
+                    }
+                }
+            case .failure(let error):
                 print(error)
-            case .cancelled:
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error de acceso", message: "Haz cancelado el acceso a Facebook", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                do{
+                    let result = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String:Any]
+                    if let mensaje = result["mensaje"] as? String{
+                        print(mensaje)
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Error de acceso", message: mensaje, preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
                 }
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                DispatchQueue.main.async {
-                    let TB = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-                    self.present(LoginController.TableBarInit!, animated: true, completion: nil)
-                    
+                catch let error as NSError{
+                    print("Error: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Error de servidor", message: "Error 500 comuniquese con el administrador", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 }
-            }
             }
         }
     }
-    
-    @IBAction func GoogleLogin(_ sender: UIButton) {
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
-        if GIDSignIn.sharedInstance().hasAuthInKeychain(){
-            
-            DispatchQueue.main.async {
-                let TB = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
-                self.present(LoginController.TableBarInit!, animated: true, completion: nil)
-                
-            }        }
-        //GIDSignIn.sharedInstance().signOut()
+    func UserInfoLoad(){
+        if let tok = UserDefaults.standard.string(forKey: "token")
+        {
+            print(tok)
+            Alamofire.request("http://api.vietaxi.com/chofer/?token="+tok).validate().responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    if let json = response.result.value {
+                        print("JSON: \(json)")
+                        do{
+                            let result = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as! [String:Any]
+                            if let nombre = result["nombre"] as? String{UserDefaults.standard.setValue(nombre, forKey: "nombre")}
+                            if let apellidos = result["apellidos"] as? String{UserDefaults.standard.setValue(apellidos, forKey: "apellidos")}
+                            if let telefono = result["telefono"] as? String{UserDefaults.standard.setValue(telefono, forKey: "telefono")}
+                            if let email = result["email"] as? String{UserDefaults.standard.setValue(email, forKey: "email")}
+                            if let rfc = result["rfc"] as? String{UserDefaults.standard.setValue(rfc, forKey: "rfc")}
+                            if let calificacion = result["calificacion"] as? String{UserDefaults.standard.setValue(calificacion, forKey: "calificacion")}
+                            if let domicilio = result["domicilio"] as? String{UserDefaults.standard.setValue(domicilio, forKey: "domicilio")}
+                            if let licencia = result["licencia"] as? String{UserDefaults.standard.setValue(licencia, forKey: "licencia")}
+                        }
+                        catch let error as NSError{
+                            print("Error: \(error.localizedDescription)")
+                        }
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
-    
-    //MARK: Metodos del text Field delegate
+    //MARK: TextField
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.characters.count + string.characters.count - range.length
         return newLength <= LoginController.MAX_TEXT_SIZE
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.UserLabel {
+            self.PassLabel.becomeFirstResponder()
         }
-    
+        else if textField == self.PassLabel {
+            self.PassLabel.resignFirstResponder()
+            let User:String = UserLabel.text!
+            let Pass:String = PassLabel.text!
+            let parameters: Parameters = [
+                "modo": 0,
+                "app": 2,
+                "email":User,
+                "password":Pass
+            ]
+            LoginFunc(parameters: parameters)
+        }
+        return true
+    }
     func Focus(_ sender: UITextField) {
         self.Logo.isHidden = false
         self.VieTaxi.isHidden = true

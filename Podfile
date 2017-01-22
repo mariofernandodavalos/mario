@@ -5,6 +5,8 @@ target ‘VieTaxi’ do
   pod 'AFNetworking', '~> 2.6'
   pod 'ORStackView', '~> 3.0'
   pod 'SwiftyJSON', '~> 2.3'
+  pod 'Alamofire', '~> 4.0'
+  pod 'Socket.IO-Client-Swift', '~> 8.2.0'
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'

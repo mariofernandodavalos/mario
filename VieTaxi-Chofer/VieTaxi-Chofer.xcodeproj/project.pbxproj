@@ -31,6 +31,7 @@
 		847A32001E03871E00F29F22 /* ViajesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A31F81E03871E00F29F22 /* ViajesController.swift */; };
 		847A32041E03974400F29F22 /* client_613016079364-g6425l1mrlu5nvkra04kgcuqbekg7g87.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847A32031E03974400F29F22 /* client_613016079364-g6425l1mrlu5nvkra04kgcuqbekg7g87.apps.googleusercontent.com.plist */; };
 		848B568E1E0469A70027983E /* CarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B568D1E0469A60027983E /* CarController.swift */; };
+		848D0FF11E15650D00AA617E /* PhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D0FF01E15650D00AA617E /* PhoneController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		847A31F81E03871E00F29F22 /* ViajesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViajesController.swift; sourceTree = "<group>"; };
 		847A32031E03974400F29F22 /* client_613016079364-g6425l1mrlu5nvkra04kgcuqbekg7g87.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_613016079364-g6425l1mrlu5nvkra04kgcuqbekg7g87.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		848B568D1E0469A60027983E /* CarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarController.swift; sourceTree = "<group>"; };
+		848D0FF01E15650D00AA617E /* PhoneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneController.swift; sourceTree = "<group>"; };
 		B0B32021884A920BE17804D7 /* Pods-VieTaxi-Chofer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTaxi-Chofer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VieTaxi-Chofer/Pods-VieTaxi-Chofer.debug.xcconfig"; sourceTree = "<group>"; };
 		C299C347621EAFFBBFE72E4C /* Pods_VieTaxi_Chofer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VieTaxi_Chofer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C31123E03F03DD74C3CFD25A /* Pods-VieTaxi-Chofer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VieTaxi-Chofer.release.xcconfig"; path = "Pods/Target Support Files/Pods-VieTaxi-Chofer/Pods-VieTaxi-Chofer.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				847A31F71E03871E00F29F22 /* TabBarSelectedController.swift */,
 				847A31F81E03871E00F29F22 /* ViajesController.swift */,
 				848B568D1E0469A60027983E /* CarController.swift */,
+				848D0FF01E15650D00AA617E /* PhoneController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				847A31FC1E03871E00F29F22 /* LoginController.swift in Sources */,
 				847A31C91E0385C300F29F22 /* VieTaxi_Chofer.xcdatamodeld in Sources */,
 				844F0E6F1E0A716700C04575 /* EvironmentController.swift in Sources */,
+				848D0FF11E15650D00AA617E /* PhoneController.swift in Sources */,
 				847A31FF1E03871E00F29F22 /* TabBarSelectedController.swift in Sources */,
 				847A31FE1E03871E00F29F22 /* RegisterController.swift in Sources */,
 				847A31C11E0385C300F29F22 /* AppDelegate.swift in Sources */,
