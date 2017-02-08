@@ -68,6 +68,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
             switch response.result {
             case .success:
                 print("Validation Successful")
+                
+                AppDelegate.SocketIOConnect()
+                var token = ""
+                if let tok = UserDefaults.standard.string(forKey: "token")
+                {
+                    token = tok
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+                    AppDelegate.socket.emit("registro", token)
+                })
+                
                 if let json = response.result.value {
                     print("JSON: \(json)")
                     do{

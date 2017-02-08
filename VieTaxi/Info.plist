@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -72,22 +72,14 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-             <key>apirt.vietaxi.com</key>
-             <dict>
-                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                 <true/>
-                 <key>NSIncludesSubdomains</key>
-                 <true/>
-             </dict>
-             <key>http://apirt.vietaxi.com/</key>
-             <dict>
-                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                 <true/>
-                 <key>NSIncludesSubdomains</key>
-                 <true/>
-             </dict>
-
 			<key>api.vietaxi.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>apirt.vietaxi.com</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
@@ -101,12 +93,24 @@
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
+			<key>http://apirt.vietaxi.com/</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>VieTaxi requiere tu ubicacion</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>VieTaxi requiere tu ubicacion</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -77,6 +77,17 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
             switch response.result {
             case .success:
                 print("Validation Successful")
+                
+                AppDelegate.SocketIOConnect()
+                var token = ""
+                if let tok = UserDefaults.standard.string(forKey: "token")
+                {
+                    token = tok
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+                    AppDelegate.socket.emit("registro", token)
+                })
+                
                 let modo:Int = params.removeValue(forKey: "modo") as! Int
                 UserDefaults.standard.setValue(modo, forKey: "modo")
                 if let json = response.result.value {
@@ -86,9 +97,9 @@ class LoginController: UIViewController, UITextFieldDelegate, GIDSignInDelegate,
                         if let token = result["token"] as? String{
                             UserDefaults.standard.setValue(token, forKey: "token")
                             self.UserInfoLoad()
-                            self.present(AppDelegate.TableBarInit!, animated: true, completion: nil)
+                            let TableBar = self.storyboard?.instantiateViewController(withIdentifier: "NavigationVC") as? UINavigationController
+                            self.present(TableBar!, animated: true, completion: nil)
                         }
-                        
                     }
                     catch let error as NSError{
                         print("Error: \(error.localizedDescription)")

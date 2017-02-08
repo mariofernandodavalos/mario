@@ -108,6 +108,7 @@ PODS:
   - PayPal-iOS-SDK/CardIO (2.16.1):
     - CardIO (~> 5.4.1)
   - PayPal-iOS-SDK/Core (2.16.1)
+  - Socket.IO-Client-Swift (8.2.0)
   - SwiftyJSON (2.4.0)
 
 DEPENDENCIES:
@@ -123,6 +124,7 @@ DEPENDENCIES:
   - GooglePlaces
   - ORStackView (~> 3.0)
   - PayPal-iOS-SDK
+  - Socket.IO-Client-Swift (~> 8.2.0)
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
@@ -154,8 +156,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
   PayPal-iOS-SDK: 774ac7de2d7c3b0ee7e8a35f8b347fd07787321b
+  Socket.IO-Client-Swift: 900cf511777045c80d1ce1f11f71261e87765dd1
   SwiftyJSON: 96918c1bf505efa50c4f72957018dd3452090c9c
 
-PODFILE CHECKSUM: 36e42a86b6323e0ebb9d6e3b766f6b882f25db5c
+PODFILE CHECKSUM: a889017f510ee9465c365733b92e8f52f5abdd20
 
 COCOAPODS: 1.1.1

@@ -21,15 +21,25 @@ import GoogleMaps
 
 import Alamofire
 
+import SocketIO
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
     public static var TableBarInit:UINavigationController?
+     public static let socket = SocketIOClient(socketURL: URL(string: "http://apirt.vietaxi.com")!, config: [.log(false), .forcePolling(true)])
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let settings = UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(settings)
+        UIApplication.shared.registerForRemoteNotifications()
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        UIApplication.shared.applicationIconBadgeNumber = 0
+
         //Facebook
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         //Fabric
@@ -60,6 +70,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 switch response.result {
                 case .success:
                     print("Validation Successful")
+                    
+                    AppDelegate.SocketIOConnect()
+                    var token = ""
+                    if let tok = UserDefaults.standard.string(forKey: "token")
+                    {
+                        token = tok
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
+                        AppDelegate.socket.emit("registro", token)
+                    })
+                    
                     if let json = response.result.value {
                         print("JSON: \(json)")
                         do{
@@ -136,10 +157,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        SocketIOReconnect()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        SocketIOReconnect()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -152,56 +175,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         //self.saveContext()
     }
-
-    /* MARK: - Core Data stack
-
-    @available(iOS 10.0, *)
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
-        let container = NSPersistentContainer(name: "VieTaxi")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        print("Complete")
+        completionHandler(UIBackgroundFetchResult.newData)
+        SocketIOReconnect()
+        
+    }
+    
+    public static func SocketIOConnect(){
+        var token = ""
+        if let tok = UserDefaults.standard.string(forKey: "token")
+        {
+            token = tok
+        }
+        AppDelegate.socket.on("disconnect"){data, ack in
+            print("\(AppDelegate.socket.sid)")
+        }
+        AppDelegate.socket.on("registro"){data, ack in
+            print(data)
+        }
+        self.socket.on("solicitar"){data, ack in
+            self.SocketIOEvent(dato: data)
+        }
+        self.socket.on("cancelar"){data, ack in
+            self.SocketIOEvent(dato: data)
+        }
+        self.socket.on("terminar"){data, ack in
+            self.SocketIOEvent(dato: data)
+        }
+        AppDelegate.socket.joinNamespace("/cliente")
+        AppDelegate.socket.connect()
+    }
+    public static func SocketIOEvent(dato:Any){
+        if let data = dato as? [[String: Any]] {
+            print(data)
+            if let mensaje = data[0]["msj"] as? String {
+                print(mensaje)
+                let localNotification = UILocalNotification()
+                localNotification.fireDate = Date(timeIntervalSinceNow: 5)
+                localNotification.timeZone = NSTimeZone.local
+                localNotification.alertBody = mensaje
+                localNotification.alertTitle = "VieTaxi"
+                localNotification.applicationIconBadgeNumber = 1
+                UIApplication.shared.scheduleLocalNotification(localNotification)
             }
+        }
+    }
+    func SocketIOReconnect(){
+        AppDelegate.socket.disconnect()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            AppDelegate.SocketIOConnect()
+            var token = ""
+            if let tok = UserDefaults.standard.string(forKey: "token")
+            {
+                token = tok
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+                AppDelegate.socket.emit("registro", token)
+            })
         })
-        return container
-    }()
-
-    // MARK: - Core Data Saving support
-
-    func saveContext () {
-        if #available(iOS 10.0, *) {
-            let context = persistentContainer.viewContext
-        } else {
-            // Fallback on earlier versions
-        }
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }*/
+    }
 
 }
 

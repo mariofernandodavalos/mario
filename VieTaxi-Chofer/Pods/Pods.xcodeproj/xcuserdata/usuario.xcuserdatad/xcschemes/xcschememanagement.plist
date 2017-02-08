@@ -79,6 +79,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Socket.IO-Client-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,11 +102,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2575DEFEE8BF703C4EF94FDE4AEEB714</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>332F91393FB1DE033D370B4CEDDD5FCF</key>
 		<dict>
 			<key>primary</key>
@@ -112,17 +112,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>474FD917BEB8D3D1FFFFE8DD667B0B29</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>55EC33F0A66B01846C59D5F211F48784</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>593E9479C06FB200807D11AB29EB50BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5B5AC3C06B783F8674FDB4C0F900B56A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5D33541CDEA8EFBA89E00D53A47F62F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -143,6 +148,11 @@
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99DAC8550A536FAC05BD6F801A3533C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

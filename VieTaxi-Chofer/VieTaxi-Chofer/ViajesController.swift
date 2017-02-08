@@ -11,6 +11,7 @@ import CoreLocation
 import MapKit
 import GoogleMaps
 import GooglePlaces
+import SocketIO
 
 class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate,GMSMapViewDelegate {
     
@@ -23,6 +24,14 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
     @IBOutlet weak var CardShadow: UILabel!
     
     @IBOutlet weak var PhoneLabel: UILabel!
+    
+    @IBOutlet weak var NombreNotification: UILabel!
+    @IBOutlet weak var TiempoNotification: UILabel!
+    @IBOutlet weak var TeleButtonNotification: UIButton!
+    @IBOutlet weak var TelephonNotification: UILabel!
+    @IBOutlet weak var CancelNotification: UIButton!
+    @IBOutlet weak var AceptNotification: UIButton!
+    @IBOutlet weak var ProfileNotification: UIStackView!
     
     private var responseData:NSMutableData?
     private var selectedPointAnnotation:MKPointAnnotation?
@@ -53,18 +62,68 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         initLocationManager()
         
         self.ButtonRequest.layer.cornerRadius = 22.0
+        self.CancelNotification.layer.cornerRadius = 22.0
+        self.AceptNotification.layer.cornerRadius = 22.0
         ButtonRequest.layer.shadowColor = UIColor.black.cgColor
         ButtonRequest.layer.shadowOpacity = 0.4
         ButtonRequest.layer.shadowRadius = 4
         ButtonRequest.layer.shadowOffset = CGSize(width: 0.0, height: 6)
         ButtonRequest.layer.masksToBounds = false
-        
-        
+     
+        if (AppDelegate.NotificationReceive) {
+            Request()
+            AppDelegate.NotificationReceive = false
+        }
     }
+    var markeRequest = GMSMarker()
+    func Request(){
+        markeRequest.map = self.ViewMap
+        let location = CLLocationCoordinate2D.init(latitude: AppDelegate.latitude, longitude: AppDelegate.longitud)
+        markerTaxi.position = location
+        let camera = GMSCameraPosition.camera(withLatitude: AppDelegate.latitude, longitude: AppDelegate.longitud, zoom: 18)
+        ViewMap.camera = camera
+        self.CardDriver.isHidden = false
+        self.CardShadow.isHidden = false
+        self.ButtonRequest.isHidden = true
+        self.ViewMap.settings.myLocationButton = false
+    }
+    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
+        let geocoder = GMSGeocoder()
+        
+        geocoder.reverseGeocodeCoordinate(cameraPosition.target) { response , error in
+            if let result = response?.firstResult() {
+                if(!self.MarkerStatic.isHidden){
+                    mapView.clear()
+                }
+                else{
+                    self.NombreNotification.text = (result.lines?[0])!
+                    self.TiempoNotification.text = (result.lines?[1])!
+                    self.markeRequest.position = cameraPosition.target
+                    self.markeRequest.icon = GMSMarker.markerImage(with: UIColor(red: 199/255, green: 150/255, blue: 19/255, alpha: 1))
+                    self.markeRequest.snippet = (result.lines?[0])!+", "+(result.lines?[1])!
+                    self.markeRequest.appearAnimation = kGMSMarkerAnimationPop
+                    self.markeRequest.isFlat = true
+                    mapView.selectedMarker = self.markeRequest
+                }
+        }
+        }
+    }
+    
+    @IBAction func AceptFunction(_ sender: UIButton) {
+        self.CardDriver.isHidden = true
+        self.CardShadow.isHidden = true
+    }
+    @IBAction func CancelFunction(_ sender: UIButton) {
+        self.CardDriver.isHidden = true
+        self.CardShadow.isHidden = true
+        self.ButtonRequest.isHidden = false
+        self.ViewMap.settings.myLocationButton = true
+    }
+    var register:Bool = false
     @IBAction func RequesTrip(_ sender: UIButton) {
         ButtonRequest.setTitle("VieTaxi Fuera", for: .normal)
         ButtonRequest.backgroundColor = UIColor(red: 186/255, green: 56/255, blue: 48/255, alpha: 1)
-        //CardDriver.isHidden = false
+        
         //CardShadow.isHidden = false
         ViewMap.settings.myLocationButton = false
         //ButtonRequest.isHidden = true
@@ -124,7 +183,7 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
                 ViewMap.camera = camera
                 ViewMap.isMyLocationEnabled = true
                 ViewMap.settings.myLocationButton = true
-                ViewMap.mapType = kGMSTypeTerrain
+                ViewMap.mapType = kGMSTypeNormal
                 if let mylocation = ViewMap.myLocation {
                     print("User's location: \(mylocation)")
                 } else {
@@ -139,12 +198,13 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
             }
         }
         if let mylocation = ViewMap.myLocation {
-            print("Curso: \(mylocation.course)")
+            //print("Curso: \(mylocation.course)")
         }
         
     }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        print(newHeading.magneticHeading)
+        //print(newHeading.magneticHeading)
         //let image = CIImage(image: #imageLiteral(resourceName: "TaxiTop"))
         DispatchQueue.main.async {
         self.markerTaxi.icon = #imageLiteral(resourceName: "TaxiTop")
@@ -185,22 +245,6 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
             mapView.clear()
         }
     }
-    
-    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
-        let geocoder = GMSGeocoder()
-        
-        geocoder.reverseGeocodeCoordinate(cameraPosition.target) { response , error in
-            if let result = response?.firstResult() {
-                
-                self.markerTaxi.title = result.lines?[0]
-                self.markerTaxi.snippet = result.lines?[1]
-                //mapView.selectedMarker=self.markerTaxi
-                
-            }
-        }
-    }
-  
-    
     
     //MARK: - Private Methods
 
@@ -368,5 +412,7 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         PhoneLabel.isHidden = !PhoneLabel.isHidden
     }
 
+    
+    
 }
 

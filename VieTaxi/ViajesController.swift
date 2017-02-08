@@ -16,8 +16,6 @@ import SocketIO
 
 class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate,GMSMapViewDelegate {
     
-    let socket = SocketIOClient(socketURL: URL(string: "http://apirt.vietaxi.com")!, config: [.log(true), .forcePolling(true)])
-    
     @IBOutlet weak var MapView: UIView!
     
     @IBOutlet weak var ShadowLabel: UILabel!
@@ -57,7 +55,6 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         super.viewDidLoad()
         MarkerStatic.image = GMSMarker.markerImage(with: UIColor(red: 199/255, green: 150/255, blue: 19/255, alpha: 1))
         initLocationManager()
-        SocketIOConnect()
         
         Ubication.layer.shadowColor = UIColor.black.cgColor
         Ubication.layer.shadowOpacity = 0.6
@@ -113,84 +110,22 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
         Ubication.enableAttributedText = true
         Ubication.autoCompleteAttributes = attributes
     }
-    
+    var origen:[String : Any] = [:]
+    var destin:[String : Any] = [:]
     @IBAction func RequesTrip(_ sender: Any) {
         ButtonRequest.setTitle("Cancelar", for: .normal)
         CardDriver.isHidden = false
         CardShadow.isHidden = false
         ViewMap.settings.myLocationButton = false
         
-        var token = "qnPu3sorsj"
+        var token = ""
         if let tok = UserDefaults.standard.string(forKey: "token")
         {
             token = tok
         }
-        let JSONtoken = [
-            "token":token/*,
-            "origen":[
-                "lat": 20.718961,
-                "lng": -103.320940
-            ],
-            "destino":[
-                "lat":21.718961,
-                "lng":-104.320940
-            ]*/
-        ]
-        
-        let JSONsolicitar = [
-            "token":token,
-             "origen":[
-             "lat": 20.718961,
-             "lng": -103.320940
-             ],
-             "destino":[
-             "lat":21.718961,
-             "lng":-104.320940
-             ]
-        ] as [String : Any]
-        
-        let JSONInicio = [
-            "origen":[
-                "lat":21.718961,
-                "lng":-104.320940
-            ]
-        ] as [String : Any]
-        let JSONDestino = [
-            "destino":[
-                "lat": 20.718961,
-                "lng": -103.320940
-            ]
-            ] as [String : Any]
-        
-       self.socket.emit("solicitar", JSONsolicitar)
-        
-        self.socket.emit("solicitar", token, JSONInicio, JSONDestino)
-        
-        self.socket.emit("registro", token)
-        
-        self.socket.emit("registro", JSONtoken)
-        
-        self.socket.emitWithAck("registro", token).timingOut(after: 0) {data in
-            print("\(data)")
-        }
-        self.socket.emitWithAck("registro", JSONtoken).timingOut(after: 0) {data in
-            print("\(data)")
-        }
-        
-        self.socket.engineDidOpen(reason: "")
-        /*
-        socket.connect()
-        
-        
-        self.socket.on("cliente") {data, ack in
-            print("\(data)")
-            self.socket.emit("token", token)
-        }
-        self.socket.emitWithAck("cliente", ["token":token]).timingOut(after: 0, callback: {data in
-            print(data)
-        })
-        */
-        
+        print(self.origen)
+        print(self.destin)
+        AppDelegate.socket.emit("solicitar", token, self.origen, self.destin)
         
         //ButtonRequest.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15), execute: {
@@ -249,7 +184,7 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
                 
                 ViewMap.isMyLocationEnabled = true
                 ViewMap.settings.myLocationButton = true
-                ViewMap.mapType = kGMSTypeTerrain
+                ViewMap.mapType = kGMSTypeNormal
                 if let mylocation = ViewMap.myLocation {
                     print("User's location: \(mylocation)")
                 } else {
@@ -328,6 +263,12 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
                 self.MarkerStatic.isHidden = false
                 let marker = GMSMarker()
                 marker.position = cameraPosition.target
+                    self.origen = [
+                        "lat":cameraPosition.target.latitude,
+                        "lng":cameraPosition.target.longitude]
+                    self.destin = [
+                        "lat":cameraPosition.target.latitude,
+                        "lng":cameraPosition.target.longitude]
                 marker.icon = GMSMarker.markerImage(with: UIColor(red: 199/255, green: 150/255, blue: 19/255, alpha: 1))
                 self.Ubication.text = (result.lines?[0])!+", "+(result.lines?[1])!
                 self.Ubication.accessibilityLabel = nil
@@ -468,6 +409,12 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
                                         if let strlng = start_location["lng"] as? Double {
                                              let StartLocation = CLLocationCoordinate2DMake(strlat,strlng)
                                              let EndLocation = CLLocationCoordinate2DMake(endlat,endlng)
+                                            self.origen = [
+                                                "lat":strlat,
+                                                "lng":strlng]
+                                            self.destin = [
+                                                "lat":endlat,
+                                                "lng":endlng]
                                             let marker = GMSMarker()
                                             marker.position = StartLocation
                                             marker.icon = GMSMarker.markerImage(with: UIColor(red: 199/255, green: 150/255, blue: 19/255, alpha: 1))
@@ -590,38 +537,6 @@ class ViajesController: UIViewController, UITextFieldDelegate, CLLocationManager
        Caller.call(tel: "3331083140")
         //HidePhone.isHidden = !HidePhone.isHidden
         PhoneLabel.isHidden = !PhoneLabel.isHidden
-    }
-    
-    func SocketIOConnect(){
-        var token = ""
-        if let tok = UserDefaults.standard.string(forKey: "token")
-        {
-            token = tok
-        }
-        self.socket.on("connect") {data, ack in
-            //print("\(self.socket.sid)")
-            self.socket.joinNamespace("/chofer")
-            self.socket.emit("registro", token)
-        }
-        self.socket.on("registro"){data, ack in
-            self.SocketIOEvent(dato: data)
-        }
-        self.socket.on("solicitar"){data, ack in
-            print("\(data)")
-            self.SocketIOEvent(dato: data)
-        }
-        self.socket.connect()
-    }
-    func SocketIOEvent(dato:[Any]){
-        do{
-            let data = try JSONSerialization.data(withJSONObject: dato, options: JSONSerialization.WritingOptions.prettyPrinted)
-            if let jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
-                    print(jsonResult)
-                    if let mensaje = jsonResult.value(forKey: "msj") as? [[String:AnyObject]] {
-                        print(mensaje)
-                    }
-            }
-        }catch{print("socketData Error")}
     }
 }
 

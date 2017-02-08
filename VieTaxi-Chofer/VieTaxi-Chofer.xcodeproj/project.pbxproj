@@ -28,7 +28,6 @@
 		847A31FD1E03871E00F29F22 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A31F51E03871E00F29F22 /* ProfileController.swift */; };
 		847A31FE1E03871E00F29F22 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A31F61E03871E00F29F22 /* RegisterController.swift */; };
 		847A31FF1E03871E00F29F22 /* TabBarSelectedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A31F71E03871E00F29F22 /* TabBarSelectedController.swift */; };
-		847A32001E03871E00F29F22 /* ViajesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A31F81E03871E00F29F22 /* ViajesController.swift */; };
 		847A32041E03974400F29F22 /* client_613016079364-g6425l1mrlu5nvkra04kgcuqbekg7g87.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847A32031E03974400F29F22 /* client_613016079364-g6425l1mrlu5nvkra04kgcuqbekg7g87.apps.googleusercontent.com.plist */; };
 		848B568E1E0469A70027983E /* CarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B568D1E0469A60027983E /* CarController.swift */; };
 		848D0FF11E15650D00AA617E /* PhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D0FF01E15650D00AA617E /* PhoneController.swift */; };
@@ -286,6 +285,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 7962FWHR52;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					847A31D31E0385C400F29F22 = {
 						CreatedOnToolsVersion = 8.1;
@@ -428,7 +432,6 @@
 				847A31FB1E03871E00F29F22 /* Helpers.swift in Sources */,
 				848B568E1E0469A70027983E /* CarController.swift in Sources */,
 				847A31FA1E03871E00F29F22 /* GoogleMapsExtension.swift in Sources */,
-				847A32001E03871E00F29F22 /* ViajesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
